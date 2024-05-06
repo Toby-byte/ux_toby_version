@@ -8,20 +8,28 @@ document.getElementById('searchButton').addEventListener('click', function() {
             const mealDisplay = document.getElementById('mealDisplay');
             mealDisplay.innerHTML = ''; // Clear previous results
 
-            if (data.meals) {
-                const { strMealThumb, strMeal, strCategory } = data.meals[0];
+            if (data.meals && data.meals.length > 0) {
+                // Loop through all meals and append their details to the page
+                data.meals.forEach(meal => {
+                    const { strMealThumb, strMeal, strCategory } = meal;
 
-                const img = document.createElement('img');
-                img.src = strMealThumb;
-                mealDisplay.appendChild(img);
+                    const mealContainer = document.createElement('div');
+                    mealContainer.className = 'meal-container';
+                    
+                    const img = document.createElement('img');
+                    img.src = strMealThumb;
+                    mealContainer.appendChild(img);
 
-                const mealName = document.createElement('h1');
-                mealName.textContent = strMeal;
-                mealDisplay.appendChild(mealName);
+                    const mealName = document.createElement('h1');
+                    mealName.textContent = strMeal;
+                    mealContainer.appendChild(mealName);
 
-                const category = document.createElement('p');
-                category.textContent = `Category: ${strCategory}`;
-                mealDisplay.appendChild(category);
+                    const category = document.createElement('p');
+                    category.textContent = `Category: ${strCategory}`;
+                    mealContainer.appendChild(category);
+
+                    mealDisplay.appendChild(mealContainer);
+                });
             } else {
                 mealDisplay.textContent = 'No meals found.';
             }
