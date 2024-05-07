@@ -64,6 +64,7 @@ nav a:hover{
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  z-index: 1000;
 }
 
 .sidebar li{
@@ -100,10 +101,12 @@ nav a:hover{
 	background-color: #24262b;
     padding: 70px 0;
 }
+
 .footer-col{
    width: 25%;
    padding: 0 15px;
 }
+
 .footer-col h4{
 	font-size: 18px;
 	color: #ffffff;
@@ -122,9 +125,11 @@ nav a:hover{
 	box-sizing: border-box;
 	width: 50px;
 }
+
 .footer-col ul li:not(:last-child){
 	margin-bottom: 10px;
 }
+
 .footer-col ul li a{
 	font-size: 16px;
 	text-transform: capitalize;
@@ -135,10 +140,12 @@ nav a:hover{
 	display: block;
 	transition: all 0.3s ease;
 }
+
 .footer-col ul li a:hover{
 	color: #ffffff;
 	padding-left: 8px;
 }
+
 .footer-col .social-links a{
 	display: inline-block;
 	height: 40px;
@@ -151,6 +158,7 @@ nav a:hover{
 	color: #ffffff;
 	transition: all 0.5s ease;
 }
+
 .footer-col .social-links a:hover{
 	background-color: #e91e63;
 }
@@ -161,6 +169,7 @@ nav a:hover{
   .hideOnMobile{
     display: none;
   }
+  
   .menu-button{
     display: block;
   }
@@ -170,6 +179,7 @@ nav a:hover{
     margin-bottom: 30px;
 }
 }
+
 @media(max-width: 450px){
   .sidebar{
     width: 100%;
