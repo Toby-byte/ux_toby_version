@@ -1,44 +1,84 @@
-body {
-    font-family: Arial, sans-serif;
-    padding-top: 50px;
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  min-height: 100vh;
+  background: url('laptop.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+nav{
+  background-color: white;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
-#mealDisplay {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* This centers the child elements horizontally */
-    gap: 20px; /* Adds space between the meal containers */
+nav ul{
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-div.meal-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 200px; /* Sets the maximum width for each meal container */
-    border: 1px solid #ccc; /* Optional: adds a border around each meal container */
-    padding: 10px;
-    border-radius: 10px; /* Optional: adds rounded corners to each meal container */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds a shadow for a 3D effect */
+nav li{
+  height: 50px;
+
+}
+nav a{
+  height: 100%;
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
 }
 
-#search-container {
-    display: flex;
-    justify-content: center; /* Centers the search bar and button horizontally */
-    margin-bottom: 20px;
+nav a:hover{
+  background-color: #f0f0f0;
 }
 
-input[type="text"] {
-    padding: 8px;
-    width: 200px; /* Adjust as needed */
-    margin-right: 10px;
+.sidebar{
+  position: fixed;
+  top: 0; 
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
-button {
-    padding: 10px;
-    cursor: pointer;
+.sidebar li{
+  width: 100%;
 }
 
-img {
-    max-width: 100%; /* Ensures the image fits within its container */
-    border-radius: 10px; /* Adds rounded corners to the image */
-    margin-top: 10px;
+.sidebar a{
+  width: 100%;
+}
+
+.menu-button{
+  display: none;
+}
+
+@media(max-width: 800px){
+  .hideOnMobile{
+    display: none;
+  }
+  .menu-button{
+    display: block;
+  }
+}
+
+@media(max-width: 400px){
+  .sidebar{
+    width: 100%;
+  }
 }
