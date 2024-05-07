@@ -6,16 +6,19 @@ document.getElementById('searchButton').addEventListener('click', function() {
         .then(response => response.json())
         .then(data => {
             const mealDisplay = document.getElementById('mealDisplay');
-            mealDisplay.innerHTML = ''; // Clear previous results
+            mealDisplay.innerHTML = '';
 
-            if (data.meals && data.meals.length > 0) {
-                // Loop through all meals and append their details to the page
+            if (data.meals) {
                 data.meals.forEach(meal => {
-                    const { strMealThumb, strMeal, strCategory } = meal;
+                    const { strMealThumb, strMeal, strCategory, idMeal } = meal;
 
+                    const link = document.createElement('a');
+                    link.href = `meal-detail.html?id=${idMeal}`; // Assuming 'meal-detail.html' is your detail page
+                    link.className = 'meal-link';
+                    
                     const mealContainer = document.createElement('div');
                     mealContainer.className = 'meal-container';
-                    
+
                     const img = document.createElement('img');
                     img.src = strMealThumb;
                     mealContainer.appendChild(img);
@@ -28,7 +31,8 @@ document.getElementById('searchButton').addEventListener('click', function() {
                     category.textContent = `Category: ${strCategory}`;
                     mealContainer.appendChild(category);
 
-                    mealDisplay.appendChild(mealContainer);
+                    link.appendChild(mealContainer);
+                    mealDisplay.appendChild(link);
                 });
             } else {
                 mealDisplay.textContent = 'No meals found.';
