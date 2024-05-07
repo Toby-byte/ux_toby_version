@@ -4,7 +4,6 @@
 }
 body{
   min-height: 100vh;
-  background: url('laptop.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -14,18 +13,14 @@ nav{
   background-color: white;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
-
 nav ul{
   width: 100%;
   list-style: none;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
 }
-
 nav li{
   height: 50px;
-
 }
 nav a{
   height: 100%;
@@ -35,11 +30,9 @@ nav a{
   align-items: center;
   color: black;
 }
-
 nav a:hover{
   background-color: #f0f0f0;
 }
-
 .sidebar{
   position: fixed;
   top: 0; 
@@ -55,19 +48,15 @@ nav a:hover{
   align-items: flex-start;
   justify-content: flex-start;
 }
-
 .sidebar li{
   width: 100%;
 }
-
 .sidebar a{
   width: 100%;
 }
-
 .menu-button{
   display: none;
 }
-
 @media(max-width: 800px){
   .hideOnMobile{
     display: none;
@@ -76,7 +65,6 @@ nav a:hover{
     display: block;
   }
 }
-
 @media(max-width: 400px){
   .sidebar{
     width: 100%;
