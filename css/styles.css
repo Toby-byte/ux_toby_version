@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 50px;
+}
+
+#mealDisplay {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* This centers the child elements horizontally */
+    gap: 20px; /* Adds space between the meal containers */
+}
+
+div.meal-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px; /* Sets the maximum width for each meal container */
+    border: 1px solid #ccc; /* Optional: adds a border around each meal container */
+    padding: 10px;
+    border-radius: 10px; /* Optional: adds rounded corners to each meal container */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds a shadow for a 3D effect */
+}
+
+#search-container {
+    display: flex;
+    justify-content: center; /* Centers the search bar and button horizontally */
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    width: 200px; /* Adjust as needed */
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%; /* Ensures the image fits within its container */
+    border-radius: 10px; /* Adds rounded corners to the image */
+    margin-top: 10px;
+}
