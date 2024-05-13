@@ -20,8 +20,7 @@ const requestOptions = {
 
 
 
-    // Sign up // 
-   document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const signupForm = document.querySelector('#signup-form');
     const loginForm = document.querySelector('#login-form');
 
@@ -49,6 +48,12 @@ const requestOptions = {
                 return;
             }
 
+            // Validate password strength
+            if (!isValidPassword(password)) {
+                passwordError.textContent = 'Password must be between 8 and 20 characters, and contain lowercase and uppercase letters, numbers, and special characters.';
+                return;
+            }
+
             passwordError.textContent = '';
 
             const response = await fetch('http://localhost:3000/users', {
@@ -72,6 +77,12 @@ const requestOptions = {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);
         }
+
+        function isValidPassword(password) {
+            // Regular expression for validating password strength
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
+            return passwordRegex.test(password);
+        }
     }
 
     if (loginForm) {
@@ -91,7 +102,12 @@ const requestOptions = {
 
             if (user) {
                 alert('Login successful!');
+                
+                // Store logged-in user's email in sessionStorage
+                sessionStorage.setItem('loggedInUser', email);
+                
                 // Redirect or do something else
+                window.location.href = "index.html";
             } else {
                 alert('Invalid email or password!');
             }
