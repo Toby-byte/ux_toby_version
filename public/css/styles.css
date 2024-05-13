@@ -1,4 +1,8 @@
 @import '_variables.css';
+@import 'cards.css';
+@import 'aboutus.css';
+@import 'categories.css';
+@import 'contactus.css';
 
 *{
   margin: 0;
@@ -86,7 +90,6 @@ nav a:hover{
 .footer{
 	background-color: #24262b;
     padding: 10px;
-    position: fixed;
     bottom: 0;
     width: 100%;
 }
@@ -162,7 +165,7 @@ nav a:hover{
 }
 
 
-/* start of footer */
+/* end of footer */
 
 @media(max-width: 768px){
   .hideOnMobile{
@@ -175,7 +178,6 @@ nav a:hover{
 
   .footer-col{
     width: 50%;
-    margin-bottom: 30px;
 }
 }
 
