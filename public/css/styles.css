@@ -85,7 +85,10 @@ nav a:hover{
 
 .footer{
 	background-color: #24262b;
-    padding: 70px 0;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .container{
@@ -95,11 +98,6 @@ nav a:hover{
 .row{
 	display: flex;
 	flex-wrap: wrap;
-}
-
-.footer{
-	background-color: #24262b;
-    padding: 70px 0;
 }
 
 .footer-col{
@@ -162,6 +160,7 @@ nav a:hover{
 .footer-col .social-links a:hover{
 	background-color: #e91e63;
 }
+
 
 /* start of footer */
 
