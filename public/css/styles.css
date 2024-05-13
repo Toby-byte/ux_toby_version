@@ -1,4 +1,8 @@
 @import '_variables.css';
+@import 'aboutus.css';
+@import 'categories.css';
+/* @import 'signup.css'; */
+
 
 *{
   margin: 0;
