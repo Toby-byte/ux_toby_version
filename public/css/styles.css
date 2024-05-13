@@ -1,7 +1,8 @@
 @import '_variables.css';
 @import 'aboutus.css';
-@import 'categories.css';
-/* @import 'signup.css'; */
+@import 'contactus.css';
+@import 'signup.css';
+@import 'cards.css';
 
 
 *{
