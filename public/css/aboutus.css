@@ -6,6 +6,10 @@ img {
     object-fit: cover;
 }
 
+.team_img {
+    border-radius: 50%;
+}
+
 .about{
     display: flex;
     flex-direction: column;
