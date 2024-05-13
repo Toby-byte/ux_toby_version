@@ -1,5 +1,15 @@
 @import 'styles.css';
 
+img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.team_img {
+    border-radius: 50%;
+}
+
 .about{
     display: flex;
     flex-direction: column;

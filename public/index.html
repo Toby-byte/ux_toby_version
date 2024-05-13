@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>eat food</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/cards.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <script src="js/script.js" defer></script>
   <script src="js/apitest.js" defer></script>
@@ -21,23 +20,23 @@
       <li><a href="#">Recipes</a></li>
       <li><a href="#">Contact Us</a></li>
       <li><a href="#">About Us</a></li>
-      <li><a href="#">Sign up</a></li>
-      <li><a href="#">Login</a></li>
+      <li><a href="signup.html">Sign up</a></li>
+      <li><a href="login.html">Login</a></li>
     </ul>
 
     <ul>
       <li class="hideOnMobile"><a href="#">Recipes</a></li>
       <li class="hideOnMobile"><a href="#">About</a></li>
       <li class="hideOnMobile"><a href="#">Contact Us</a></li>
+      <div id="search-container">
+        <input type="text" id="mealInput" placeholder="Enter meal name">
+        <button id="searchButton">Search</button>
+      </div>
       <li class="hideOnMobile"><a href="#">Sign up</a></li>
       <li class="hideOnMobile"><a href="#">Login</a></li>
       <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
     </ul>
   </nav>
-  <div id="search-container">
-    <input type="text" id="mealInput" placeholder="Enter meal name">
-    <button id="searchButton">Search</button>
-  </div>
   <div id="mealDisplay"></div>
   
 

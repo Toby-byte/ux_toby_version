@@ -1,8 +1,16 @@
 @import '_variables.css';
+<<<<<<< HEAD
 @import 'cards.css';
 @import 'aboutus.css';
 @import 'categories.css';
 @import 'contactus.css';
+=======
+@import 'aboutus.css';
+@import 'contactus.css';
+@import 'signup.css';
+@import 'cards.css';
+
+>>>>>>> 135d44ddc01144c96e44a7b463dc6d8dffc220ef
 
 *{
   margin: 0;
