@@ -8,11 +8,12 @@
 
 .card {
     color: white;
-    padding: 10rem 0 0;
-    max-width: 35ch;
+    padding: 5rem 0 0;
+    max-width: 35rem;
     border-radius: 0.5rem; 
     overflow: hidden;
     background-image: url('https://source.unsplash.com/random');
+    background-size: cover;
     transition: transform 500ms ease;
 }
 

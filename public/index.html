@@ -7,12 +7,13 @@
   <title>eat food</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
   <script src="js/script.js" defer></script>
   <script src="js/apitest.js" defer></script>
 </head>
 <body>
   <header>
-    <a href="index.html"><h1>Put Name Here</h1></a>
+    <a href="index.html" class="logo"><h1>EAT SOME FOOD</h1></a>
   </header>
   <nav>
     <ul class="sidebar">
@@ -28,13 +29,13 @@
       <li class="hideOnMobile"><a href="#">Recipes</a></li>
       <li class="hideOnMobile"><a href="#">About</a></li>
       <li class="hideOnMobile"><a href="#">Contact Us</a></li>
-      <div id="search-container">
-        <input type="text" id="mealInput" placeholder="Enter meal name">
-        <button id="searchButton">Search</button>
-      </div>
       <li class="hideOnMobile"><a href="#">Sign up</a></li>
       <li class="hideOnMobile"><a href="#">Login</a></li>
       <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+      <li id="search-container">
+      <input type="text" id="mealInput" placeholder="Enter meal name">
+        <button id="searchButton">Search</button>
+      </li>
     </ul>
   </nav>
   <div id="mealDisplay"></div>
@@ -42,41 +43,40 @@
 
   <main>
 	<section>
-	<div class="cards">
-	 <div class="card">
-      <div class="card-content">
-      <h2 class="card-title">Something Something</h2>
-      <p class="card-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque</p>
-      <a href="#" class="card-btn">More</a>
-      </div>
+    <div class="cards">
+        <article class="card">
+            <div class="card-content">
+                <h2 class="card-title">Something Something</h2>
+                <p class="card-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque</p>
+                <a href="#" class="card-btn">More</a>
+            </div>
+        </article>
+        <article class="card">
+            <div class="card-content">
+                <h2 class="card-title">Something Something</h2>
+                <p class="card-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque</p>
+                <a href="#" class="card-btn">More</a>
+            </div>
+        </article>
+        <article class="card">
+            <div class="card-content">
+                <h2 class="card-title">Something Something</h2>
+                <p class="card-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque</p>
+                <a href="#" class="card-btn">More</a>
+            </div>
+        </article>
+        <article class="card">
+            <div class="card-content">
+                <h2 class="card-title">Something Something</h2>
+                <p class="card-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque</p>
+                <a href="#" class="card-btn">More</a>
+            </div>
+        </article>
     </div>
-	 <div class="card">
-      <div class="card-content">
-      <h2 class="card-title">Something Something</h2>
-      <p class="card-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque</p>
-      <a href="#" class="card-btn">More</a>
-      </div>
-    </div>
-	 <div class="card">
-      <div class="card-content">
-      <h2 class="card-title">Something Something</h2>
-      <p class="card-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque</p>
-      <a href="#" class="card-btn">More</a>
-      </div>
-    </div>
-	 <div class="card">
-      <div class="card-content">
-      <h2 class="card-title">Something Something</h2>
-      <p class="card-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque</p>
-      <a href="#" class="card-btn">More</a>
-      </div>
-    </div>
-	</div>
-	</section>
-
+</section>
   </main>
 
-  <footer class="footer">
+  <footer>
   	 <div class="container">
   	 	<div class="row">
   	 		<div class="footer-col">

@@ -1,16 +1,9 @@
 @import '_variables.css';
-<<<<<<< HEAD
-@import 'cards.css';
-@import 'aboutus.css';
-@import 'categories.css';
-@import 'contactus.css';
-=======
 @import 'aboutus.css';
 @import 'contactus.css';
 @import 'signup.css';
 @import 'cards.css';
 
->>>>>>> 135d44ddc01144c96e44a7b463dc6d8dffc220ef
 
 *{
   margin: 0;
@@ -19,9 +12,21 @@
   list-style: none;
 }
 
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -1rem;
+  font-family: "Indie Flower", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  color: var(--logoColor);
+  text-decoration: none;
+}
+
 body{
   line-height: 1.5;
-	font-family: 'Poppins', sans-serif;
+  background-color: var(--bgColor);
 }
 
 /* start of header */
@@ -34,8 +39,10 @@ header {
 }
 
 nav{
-  background-color: white;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  border-top: 3px solid var(--logoColor);
+  max-width: 90%; /* Adjust this value as needed */
+  margin-left: auto; /* Align the nav to the right */
+  margin-right: auto; /* Align the nav to the left */
 }
 
 nav ul{
@@ -55,21 +62,55 @@ nav a{
   text-decoration: none;
   display: flex;
   align-items: center;
-  color: black;
+  color: var(--bodyTextColor);
+  transition: all 0.3s ease;
 }
 
 nav a:hover{
-  background-color: #f0f0f0;
+  color: var(--logoColor);
+	padding-top: 8px;
+  font-size: 1.1rem;
+}
+
+#search-container {
+    display: flex;
+    align-items: center;
+}
+
+#search-container input[type="text"] {
+    margin-right: 10px; 
+}
+
+input {
+  width: 100%;
+  padding: 0.4rem;
+  border: var(--bgColor);
+  border-radius: 4px;
+  line-height: 1;
+}
+
+#searchButton {
+  cursor: pointer;
+  display: inline;
+  text-decoration: none;
+  color: black;
+  background-color: greenyellow;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  max-width: max-content;
+}
+
+#searchButton:hover {
+  background-color: green;
 }
 
 .sidebar{
   position: fixed;
   top: 0; 
-  right: 0;
+  left: 0;
   height: 100vh;
   width: 250px;
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
+  background-color: var(--footerColor);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
   list-style: none;
   display: none;
@@ -95,11 +136,12 @@ nav a:hover{
 
 /* start of footer */
 
-.footer{
-	background-color: #24262b;
-    padding: 10px;
-    bottom: 0;
-    width: 100%;
+footer{
+	background-color: var(--footerColor);
+  position: fixed;
+  padding: 14px;
+  bottom: 0;
+  width: 100%;
 }
 
 .container{
@@ -118,34 +160,22 @@ nav a:hover{
 
 .footer-col h4{
 	font-size: 18px;
-	color: #ffffff;
+	color: var(--bodyTextColor);
 	text-transform: capitalize;
 	margin-bottom: 35px;
 	font-weight: 500;
 	position: relative;
-}
-.footer-col h4::before{
-	content: '';
-	position: absolute;
-	left:0;
-	bottom: -10px;
-	background-color: #e91e63;
-	height: 2px;
-	box-sizing: border-box;
-	width: 50px;
+  border-bottom: 0.2rem solid var(--logoColor);
+  width: 45%;
 }
 
-.footer-col ul li:not(:last-child){
-	margin-bottom: 10px;
-}
 
 .footer-col ul li a{
 	font-size: 16px;
 	text-transform: capitalize;
-	color: #ffffff;
+	color: var(--bodyTextColor);
 	text-decoration: none;
 	font-weight: 300;
-	color: #bbbbbb;
 	display: block;
 	transition: all 0.3s ease;
 }
@@ -159,17 +189,18 @@ nav a:hover{
 	display: inline-block;
 	height: 40px;
 	width: 40px;
-	background-color: rgba(255,255,255,0.2);
+	background-color: var(--bgColor);
 	margin:0 10px 10px 0;
 	text-align: center;
 	line-height: 40px;
 	border-radius: 50%;
-	color: #ffffff;
+	color: var(--bodyTextColor);
 	transition: all 0.5s ease;
 }
 
 .footer-col .social-links a:hover{
-	background-color: #e91e63;
+	background-color: var(--logoColor);
+  color: var();
 }
 
 
@@ -182,16 +213,45 @@ nav a:hover{
   
   .menu-button{
     display: block;
+    margin-left: -1.5rem;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  #search-container {
+    display: flex;
+    align-items: center; 
+    margin-left: 2.5rem;
+}
+
+#search-container input[type="text"] {
+    margin-right: 0.5; 
+}
+
+  footer {
+    position: relative;
   }
 
   .footer-col{
     width: 50%;
 }
+
+  .footer-col h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    width: 30%;
+  }
 }
 
 @media(max-width: 450px){
   .sidebar{
-    width: 100%;
+    width: 50%;
+  }
+
+  footer {
+    position: relative;
   }
 
   .footer-col{
