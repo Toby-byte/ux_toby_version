@@ -4,19 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
     <script src="js/script.js" defer></script>
 </head>
 <body>
-     <form id="login-form">
-        <h2>Login</h2>
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" required>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <input type="submit" value="Login">
-    </form>
-    <div class="singup-link">
-        Dont have a user? <a href="signup.html">Click here to go to the sign up page</a>
-    </div>
+    <main>
+        <section id="login">
+            <div class="login-container">
+                <img src="images/food3.jpg" alt="">
+                <div class="login-wrapper">
+                    <h2>Sign in</h2>
+                    <div class="center">
+                        <p>Explore the culinary world!</p>
+                        <div>
+                            <p>Don't have an account yet? don't worry</p>
+                            <a href="signup.html">Create an account here</a>
+                        </div>
+                    </div>
+                    <form id="login-form">
+                        <div class="login-field">
+                            <label class="login-label" for="email">Email address:</label>
+                            <input class="login-input" type="text" id="email" name="email" required>
+                        </div>
+                        <div class="login-field">
+                            <label class="login-label" for="password">Password:</label>
+                            <input class="login-input" type="password" id="password" name="password" required>
+                            <a href="#">forgot your password?</a>
+                        </div>
+                        <input class="login-button" type="submit" value="Sign in">
+                    </form>
+                    <div class="center">
+                        <p>Log in to your account to view your recipe history, manage your favorites and ask us questions about recipes if you have any doubts.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="signup-container">
+                <div class="signup-wrapper">
+                    <h3>Don't have an account?</h3>
+                    <a class="login-button" href="signup.html">Create an Account</a>
+                    <p class="center">Here are the benefits to creating an account</p>
+                    <ul class="signup-benefits">
+                        <li>&#10003; It is free to create an account!</li>
+                        <li>&#10003; Sign in to save your favorite recipes</li>
+                        <li>&#10003; Check your progress on recipes</li>
+                        <li>&#10003; More features on the way! stay tuned!</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

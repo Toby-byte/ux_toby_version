@@ -1,0 +1,105 @@
+@import '_variables.css';
+@import 'styles.css';
+
+img {
+    width: 100%;
+    aspect-ratio: 2/1;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+h2, h3 {
+    margin-bottom: 0.5rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.login-container {
+    width: 25rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.login-wrapper {
+    padding: 1rem;
+}
+
+.signup-container {
+    width: 25rem;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.signup-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-field{
+    width: 100%;
+    margin-bottom: 1rem;
+    display: grid;
+}
+
+.login-input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+}
+
+.login-label {
+    justify-self: left;
+}
+
+.login-button {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    height: 3rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+.login-button:hover{
+    background-color: yellow;
+    color: black;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem 0;
+    gap: 1rem;
+}
+
+.signup-benefits {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 0;
+}
