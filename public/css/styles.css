@@ -200,7 +200,7 @@ footer{
 
 .footer-col .social-links a:hover{
 	background-color: var(--logoColor);
-  color: var();
+  color: var(--footerColor);
 }
 
 

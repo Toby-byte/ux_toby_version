@@ -62,7 +62,7 @@ height: 4px;
 left: -1.5rem;
 bottom: -0.5rem;
 width: 100%;
-background: greenyellow;
+background: var(--logoColor);
 transform: scaleX(0);
 transform-origin: left;
 transition: transform 500ms ease;
