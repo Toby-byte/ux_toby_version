@@ -20,8 +20,7 @@ const requestOptions = {
 
 
 
-    // Sign up // 
-   document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const signupForm = document.querySelector('#signup-form');
     const loginForm = document.querySelector('#login-form');
 
@@ -49,6 +48,12 @@ const requestOptions = {
                 return;
             }
 
+            // Validate password strength
+            if (!isValidPassword(password)) {
+                passwordError.textContent = 'Password must be between 8 and 20 characters, and contain lowercase and uppercase letters, numbers, and special characters.';
+                return;
+            }
+
             passwordError.textContent = '';
 
             const response = await fetch('http://localhost:3000/users', {
@@ -72,6 +77,12 @@ const requestOptions = {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);
         }
+
+        function isValidPassword(password) {
+            // Regular expression for validating password strength
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
+            return passwordRegex.test(password);
+        }
     }
 
     if (loginForm) {
@@ -91,10 +102,53 @@ const requestOptions = {
 
             if (user) {
                 alert('Login successful!');
+                
+                // Store logged-in user's email in sessionStorage
+                sessionStorage.setItem('loggedInUser', email);
+                
                 // Redirect or do something else
+                window.location.href = "index.html";
             } else {
                 alert('Invalid email or password!');
             }
         });
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('#navbar');
+
+    // Check if the user is logged in
+    const loggedInUser = sessionStorage.getItem('loggedInUser');
+    if (loggedInUser) {
+        // If logged in, display logout button and profile link
+        const profileLink = document.createElement('a');
+        profileLink.href = 'profile.html'; // Link to profile page
+        profileLink.textContent = 'Profile';
+        navbar.appendChild(profileLink);
+
+        const logoutButton = document.createElement('a');
+        logoutButton.textContent = 'Logout';
+        logoutButton.addEventListener('click', () => {
+            // Remove logged-in user's email from sessionStorage
+            sessionStorage.removeItem('loggedInUser');
+            // Redirect or do something else
+            window.location.href = "logout.html"; // Assuming logout.html contains your logout logic
+        });
+        navbar.appendChild(logoutButton);
+    } else {
+        // If not logged in, display login and signup links
+        const loginLink = document.createElement('a');
+        loginLink.href = 'login.html';
+        loginLink.textContent = 'Login';
+        navbar.appendChild(loginLink);
+
+        const signupLink = document.createElement('a');
+        signupLink.href = 'signup.html';
+        signupLink.textContent = 'Signup';
+        navbar.appendChild(signupLink);
+    }
+});
+
+
