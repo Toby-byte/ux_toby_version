@@ -114,3 +114,41 @@ const requestOptions = {
         });
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('#navbar');
+
+    // Check if the user is logged in
+    const loggedInUser = sessionStorage.getItem('loggedInUser');
+    if (loggedInUser) {
+        // If logged in, display logout button and profile link
+        const profileLink = document.createElement('a');
+        profileLink.href = 'profile.html'; // Link to profile page
+        profileLink.textContent = 'Profile';
+        navbar.appendChild(profileLink);
+
+        const logoutButton = document.createElement('a');
+        logoutButton.textContent = 'Logout';
+        logoutButton.addEventListener('click', () => {
+            // Remove logged-in user's email from sessionStorage
+            sessionStorage.removeItem('loggedInUser');
+            // Redirect or do something else
+            window.location.href = "logout.html"; // Assuming logout.html contains your logout logic
+        });
+        navbar.appendChild(logoutButton);
+    } else {
+        // If not logged in, display login and signup links
+        const loginLink = document.createElement('a');
+        loginLink.href = 'login.html';
+        loginLink.textContent = 'Login';
+        navbar.appendChild(loginLink);
+
+        const signupLink = document.createElement('a');
+        signupLink.href = 'signup.html';
+        signupLink.textContent = 'Signup';
+        navbar.appendChild(signupLink);
+    }
+});
+
+
