@@ -142,11 +142,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const loginLink = document.createElement('a');
         loginLink.href = 'login.html';
         loginLink.textContent = 'Login';
+        loginLink.classList.add("hideOnMobile");
         navbar.appendChild(loginLink);
 
         const signupLink = document.createElement('a');
         signupLink.href = 'signup.html';
         signupLink.textContent = 'Signup';
+        signupLink.classList.add("hideOnMobile");
         navbar.appendChild(signupLink);
     }
 });
