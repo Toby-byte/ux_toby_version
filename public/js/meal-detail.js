@@ -11,21 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const mealDetail = document.getElementById('mealDetail');
 
                 if (data.meals) {
-                    const { strMealThumb, strMeal, strCategory, strInstructions, 
-                        strIngredient1, strIngredient2, strIngredient3,
-                        strIngredient4, strIngredient5, strIngredient6,
-                        strIngredient7, strIngredient8, strIngredient9,
-                        strIngredient10, strIngredient11, strIngredient12,
-                        strIngredient13, strIngredient14, strIngredient15, 
-                        strIngredient16, strIngredient17, strIngredient18,
-                        strIngredient19, strIngredient20,
-                        strMeasure1, strMeasure2, strMeasure3, 
-                        strMeasure4, strMeasure5, strMeasure6, 
-                        strMeasure7, strMeasure8, strMeasure9, 
-                        strMeasure10, strMeasure11, strMeasure12, 
-                        strMeasure13, strMeasure14, strMeasure15,  
-                        strMeasure16, strMeasure17, strMeasure18, 
-                        strMeasure19, strMeasure20,  } = data.meals[0];
+                    const { strMealThumb, strMeal, strCategory, strInstructions, idMeal } = data.meals[0];
 
                     const img = document.createElement('img');
                     img.src = strMealThumb;
@@ -39,98 +25,68 @@ document.addEventListener('DOMContentLoaded', function() {
                     category.textContent = `Category: ${strCategory}`;
                     mealDetail.appendChild(category);
 
-                    const Instructions_h1 = document.createElement('H1');
-                    Instructions_h1.textContent = 'Instructions';
-                    mealDetail.appendChild(Instructions_h1);
+                    const favoriteButton = document.createElement('button');
+                    favoriteButton.textContent = '★ Favorite';
+                    mealDetail.appendChild(favoriteButton);
 
-                    const Instructions = document.createElement('div');
-                    Instructions.textContent = `${strInstructions}`;
-                    mealDetail.appendChild(Instructions);
+                    const instructionsTitle = document.createElement('h1');
+                    instructionsTitle.textContent = 'Instructions';
+                    mealDetail.appendChild(instructionsTitle);
 
-                    const h1 = document.createElement('H1');
-                    h1.textContent = 'Ingredients';
-                    mealDetail.appendChild(h1);
+                    const instructions = document.createElement('div');
+                    instructions.textContent = strInstructions;
+                    mealDetail.appendChild(instructions);
 
-                    const Ingredient1 = document.createElement('p');
-                    Ingredient1.textContent = `${strIngredient1}: ${strMeasure1}`;
-                    mealDetail.appendChild(Ingredient1);
+                    // Display ingredients
+                    const ingredientsTitle = document.createElement('h1');
+                    ingredientsTitle.textContent = 'Ingredients';
+                    mealDetail.appendChild(ingredientsTitle);
 
-                    const Ingredient2 = document.createElement('p');
-                    Ingredient2.textContent = `${strIngredient2}: ${strMeasure2}`;
-                    mealDetail.appendChild(Ingredient2);
-                    
-                    const Ingredient3 = document.createElement('p');
-                    Ingredient3.textContent = `${strIngredient3}: ${strMeasure3}`;
-                    mealDetail.appendChild(Ingredient3);
-                    
-                    const Ingredient4 = document.createElement('p');
-                    Ingredient4.textContent = `${strIngredient4}: ${strMeasure4}`;
-                    mealDetail.appendChild(Ingredient4);
-                    
-                    const Ingredient5 = document.createElement('p');
-                    Ingredient5.textContent = `${strIngredient5}: ${strMeasure5}`;
-                    mealDetail.appendChild(Ingredient5);
-                    
-                    const Ingredient6 = document.createElement('p');
-                    Ingredient6.textContent = `${strIngredient6}: ${strMeasure6}`;
-                    mealDetail.appendChild(Ingredient6);
-                    
-                    const Ingredient7 = document.createElement('p');
-                    Ingredient7.textContent = `${strIngredient7}: ${strMeasure7}`;
-                    mealDetail.appendChild(Ingredient7);
+                    for (let i = 1; i <= 20; i++) {
+                        const ingredient = data.meals[0][`strIngredient${i}`];
+                        const measure = data.meals[0][`strMeasure${i}`];
+                        if (ingredient) {
+                            const ingredientItem = document.createElement('p');
+                            ingredientItem.textContent = `${ingredient}: ${measure}`;
+                            mealDetail.appendChild(ingredientItem);
+                        }
+                    }
 
-                    const Ingredient8 = document.createElement('p');
-                    Ingredient8.textContent = `${strIngredient8}: ${strMeasure8}`;
-                    mealDetail.appendChild(Ingredient8);
-                    
-                    const Ingredient9 = document.createElement('p');
-                    Ingredient9.textContent = `${strIngredient9}: ${strMeasure9}`;
-                    mealDetail.appendChild(Ingredient9);
+                    // Handle favorite functionality
+                    favoriteButton.addEventListener('click', () => {
+                        const loggedInUserEmail = sessionStorage.getItem('loggedInUser');
+                        if (!loggedInUserEmail) {
+                            alert('You need to log in to favorite a recipe.');
+                            return;
+                        }
 
-                    const Ingredient10 = document.createElement('p');
-                    Ingredient10.textContent = `${strIngredient10}: ${strMeasure10}`;
-                    mealDetail.appendChild(Ingredient10);
+                        const favoriteRecipesKey = `user_${loggedInUserEmail}_favorites`;
+                        let favoriteRecipes = JSON.parse(localStorage.getItem(favoriteRecipesKey)) || [];
 
-                    const Ingredient11 = document.createElement('p');
-                    Ingredient11.textContent = `${strIngredient11}: ${strMeasure11}`;
-                    mealDetail.appendChild(Ingredient11);
+                        // Check if recipe is already in favorites
+                        const isFavorite = favoriteRecipes.some(recipe => recipe.idMeal === idMeal);
 
-                    const Ingredient12 = document.createElement('p');
-                    Ingredient12.textContent = `${strIngredient12}: ${strMeasure12}`;
-                    mealDetail.appendChild(Ingredient12);
+                        if (isFavorite) {
+                            // Remove from favorites
+                            favoriteRecipes = favoriteRecipes.filter(recipe => recipe.idMeal !== idMeal);
+                            favoriteButton.textContent = '★ Favorite';
+                        } else {
+                            // Add to favorites
+                            favoriteRecipes.push({ idMeal, name: strMeal });
+                            favoriteButton.textContent = '★ Unfavorite';
+                        }
 
-                    const Ingredient13 = document.createElement('p');
-                    Ingredient13.textContent = `${strIngredient13}: ${strMeasure13}`;
-                    mealDetail.appendChild(Ingredient13);
+                        // Save updated favorites to localStorage
+                        localStorage.setItem(favoriteRecipesKey, JSON.stringify(favoriteRecipes));
+                    });
 
-                    const Ingredient14 = document.createElement('p');
-                    Ingredient14.textContent = `${strIngredient14}: ${strMeasure14}`;
-                    mealDetail.appendChild(Ingredient14);
-                    
-                    const Ingredient15 = document.createElement('p');
-                    Ingredient15.textContent = `${strIngredient15}: ${strMeasure15}`;
-                    mealDetail.appendChild(Ingredient15);
-
-                    const Ingredient16 = document.createElement('p');
-                    Ingredient16.textContent = `${strIngredient16}: ${strMeasure16}`;
-                    mealDetail.appendChild(Ingredient16);
-
-                    const Ingredient17 = document.createElement('p');
-                    Ingredient17.textContent = `${strIngredient17}: ${strMeasure17}`;
-                    mealDetail.appendChild(Ingredient17);
-                    
-                    const Ingredient18 = document.createElement('p');
-                    Ingredient18.textContent = `${strIngredient18}: ${strMeasure18}`;
-                    mealDetail.appendChild(Ingredient18);
-
-                    const Ingredient19 = document.createElement('p');
-                    Ingredient19.textContent = `${strIngredient19}: ${strMeasure19}`;
-                    mealDetail.appendChild(Ingredient19);
-                    
-                    const Ingredient20 = document.createElement('p');
-                    Ingredient20.textContent = `${strIngredient20}: ${strMeasure20}`;
-                    mealDetail.appendChild(Ingredient20);
-
+                    // Check if the meal is already a favorite and update button text accordingly
+                    const favoriteRecipesKey = `user_${sessionStorage.getItem('loggedInUser')}_favorites`;
+                    const favoriteRecipes = JSON.parse(localStorage.getItem(favoriteRecipesKey)) || [];
+                    const isFavorite = favoriteRecipes.some(recipe => recipe.idMeal === idMeal);
+                    if (isFavorite) {
+                        favoriteButton.textContent = '★ Unfavorite';
+                    }
                 } else {
                     mealDetail.textContent = 'Meal details not found.';
                 }

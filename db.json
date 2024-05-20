@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "email": "albertlampeskærm@pismail.com",
+      "password": "Qwerty98!",
+      "id": 1
+    },
+    {
+      "email": "lars@gmail.com",
+      "password": "Qwerty98!",
+      "id": 2
+    }
+  ]
+}
