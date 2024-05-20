@@ -1,0 +1,52 @@
+
+.rtw-header {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 2rem;
+    color: var(--logoColor);
+}
+
+.rtw-text-container {
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 0.5rem;
+    margin-top: -1rem;
+}
+
+.rtw-text {
+    display: flex;  /* Added to ensure the content inside .rtw-text aligns properly */
+    align-items: center;  /* Added for vertical alignment */
+    justify-content: center;
+     padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--bodyTextColor);
+}
+
+/* Styles for larger screens */
+@media (min-width: 600px) {
+    .rtw-header {
+        font-size: 2.5rem;  /* Increase font size for larger screens */
+    }
+
+    .rtw-text {
+        font-size: 1.4rem;  /* Increase font size for larger screens */
+    }
+}
+
+@media (min-width: 900px) {
+    .rtw-header {
+        font-size: 3rem;  /* Increase font size for even larger screens */
+    }
+
+    .rtw-text {
+        font-size: 1.6rem;  /* Increase font size for even larger screens */
+    }
+}
+
+
+
+  
+
+

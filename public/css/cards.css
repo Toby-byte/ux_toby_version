@@ -1,4 +1,12 @@
 
+.card-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-size: 2rem;
+    color: var(--logoColor);
+}
+
 .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
