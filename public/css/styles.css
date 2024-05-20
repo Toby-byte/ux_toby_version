@@ -16,12 +16,15 @@
 .logo {
   display: flex;
   justify-content: center;
-  margin-bottom: -1rem;
+  font-family: var(--TitleFont);
   font-weight: 400;
   font-style: normal;
-  font-size: 2rem;
   color: var(--logoColor);
   text-decoration: none;
+}
+
+.logo h1 {
+  font-size: 4rem;
 }
 
 body{
@@ -29,10 +32,36 @@ body{
   background-color: var(--bgColor);
 }
 
+h1 {
+  font-family: var(--TitleFont);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  color: var(--logoColor);
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: var(--SubtitleFont);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--logoColor);
+}
+
+h2 {
+  font-weight: bold;
+}
+
+p, a  {
+  font-family: var(--BodyFont);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--bodyTextColor);
+}
+
 /* start of header */
 
 header {
-  padding: 10px 0;
+  padding-top: 1rem;
   display: flex;
   justify-content: center;
   text-decoration: none;
@@ -50,6 +79,7 @@ nav ul{
   list-style: none;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 nav li{
@@ -58,7 +88,7 @@ nav li{
 
 nav a{
   height: 100%;
-  padding: 0 30px;
+  padding: 0 1.3rem;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -94,14 +124,14 @@ input {
   display: inline;
   text-decoration: none;
   color: black;
-  background-color: greenyellow;
+  background-color: var(--logoColor);
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   max-width: max-content;
 }
 
 #searchButton:hover {
-  background-color: green;
+  background-color: var(--hoverColor);
 }
 
 .sidebar{
@@ -151,6 +181,7 @@ footer{
 .row{
 	display: flex;
 	flex-wrap: wrap;
+  justify-content: center;
 }
 
 .footer-col{
@@ -162,8 +193,8 @@ footer{
 	font-size: 18px;
 	color: var(--bodyTextColor);
 	text-transform: capitalize;
-	margin-bottom: 35px;
-	font-weight: 500;
+	margin-bottom: 1rem;
+  font-weight: bold;
 	position: relative;
   border-bottom: 0.2rem solid var(--logoColor);
   width: 45%;
@@ -244,6 +275,12 @@ footer{
     margin-top: 2rem;
     margin-bottom: 1rem;
     width: 30%;
+    text-align: center;
+  }
+
+  .logo h1 {
+    font-size: 3rem;
+    padding: 1rem 0;
   }
 }
 
@@ -258,8 +295,20 @@ footer{
   }
 
   .footer-col{
+    display: flex;
+    flex-direction: column;
     width: 100%;
-}
+    align-items: center;
+  }
+
+  .footer-col ul li {
+    text-align: center;
+  }
+
+  .logo h1 {
+    font-size: 2rem;
+    padding: 2rem 0;
+  }
 }
 
 /* end of @mediea */
