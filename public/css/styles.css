@@ -80,6 +80,8 @@ header {
 }
 
 nav{
+  display: flex;
+  justify-content: space-between;
   border-top: 3px solid var(--logoColor);
   max-width: 90%; /* Adjust this value as needed */
   margin-left: auto; /* Align the nav to the right */
@@ -87,15 +89,28 @@ nav{
 }
 
 nav ul{
-  width: 100%;
+  width: 50%;
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+
+nav #navbar {
+  justify-content: right;
+}
+
+nav #navbar li {
+  padding: 0 1rem;
+}
+
+nav #navbar li:hover{
+  padding-top: 0.5rem;
+  transition: all 0.3s ease;
 }
 
 nav li{
   height: 50px;
+  padding: 0 1rem;
 }
 
 nav li:hover{
@@ -105,7 +120,6 @@ nav li:hover{
 
 nav a{
   height: 100%;
-  padding: 0 1.3rem;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -187,7 +201,7 @@ input {
 footer{
 	background-color: var(--footerColor);
   /* position: fixed; */
-  padding: 14px;
+  padding: 3rem 1rem;
   bottom: 0;
   width: 100%;
 }
