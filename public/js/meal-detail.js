@@ -27,110 +27,84 @@ document.addEventListener('DOMContentLoaded', function() {
                         strMeasure16, strMeasure17, strMeasure18, 
                         strMeasure19, strMeasure20,  } = data.meals[0];
 
+                    const img_name_div = document.createElement('div');
+                    
                     const img = document.createElement('img');
                     img.src = strMealThumb;
-                    mealDetail.appendChild(img);
+                    img_name_div.appendChild(img);
+                    // mealDetail.appendChild(img);
 
                     const mealName = document.createElement('h1');
                     mealName.textContent = strMeal;
-                    mealDetail.appendChild(mealName);
+                    img_name_div.appendChild(mealName);
+                    // mealDetail.appendChild(mealName);
 
                     const category = document.createElement('p');
                     category.textContent = `Category: ${strCategory}`;
-                    mealDetail.appendChild(category);
+                    img_name_div.appendChild(category);
+                    mealDetail.appendChild(img_name_div);
 
-                    const Instructions_h1 = document.createElement('H1');
-                    Instructions_h1.textContent = 'Instructions';
-                    mealDetail.appendChild(Instructions_h1);
+                    // Create and append the Instructions section
+                    const instructionsDiv = document.createElement('div');
 
-                    const Instructions = document.createElement('div');
-                    Instructions.textContent = `${strInstructions}`;
-                    mealDetail.appendChild(Instructions);
+                    const instructionsHeading = document.createElement('h1');
+                    instructionsHeading.textContent = 'Instructions';
+                    instructionsDiv.appendChild(instructionsHeading);
 
-                    const h1 = document.createElement('H1');
-                    h1.textContent = 'Ingredients';
-                    mealDetail.appendChild(h1);
+                    const sentences = strInstructions.split(/(?<=[.!?])\s+/).filter(sentence => sentence.trim().length > 0);
+                    const ol = document.createElement('ol');
+                    sentences.forEach(sentence => {
+                        const li = document.createElement('li');
+                        li.textContent = sentence.trim();
+                        ol.appendChild(li);
+                    });
 
-                    const Ingredient1 = document.createElement('p');
-                    Ingredient1.textContent = `${strIngredient1}: ${strMeasure1}`;
-                    mealDetail.appendChild(Ingredient1);
+                    instructionsDiv.appendChild(ol);
+                    mealDetail.appendChild(instructionsDiv);
 
-                    const Ingredient2 = document.createElement('p');
-                    Ingredient2.textContent = `${strIngredient2}: ${strMeasure2}`;
-                    mealDetail.appendChild(Ingredient2);
-                    
-                    const Ingredient3 = document.createElement('p');
-                    Ingredient3.textContent = `${strIngredient3}: ${strMeasure3}`;
-                    mealDetail.appendChild(Ingredient3);
-                    
-                    const Ingredient4 = document.createElement('p');
-                    Ingredient4.textContent = `${strIngredient4}: ${strMeasure4}`;
-                    mealDetail.appendChild(Ingredient4);
-                    
-                    const Ingredient5 = document.createElement('p');
-                    Ingredient5.textContent = `${strIngredient5}: ${strMeasure5}`;
-                    mealDetail.appendChild(Ingredient5);
-                    
-                    const Ingredient6 = document.createElement('p');
-                    Ingredient6.textContent = `${strIngredient6}: ${strMeasure6}`;
-                    mealDetail.appendChild(Ingredient6);
-                    
-                    const Ingredient7 = document.createElement('p');
-                    Ingredient7.textContent = `${strIngredient7}: ${strMeasure7}`;
-                    mealDetail.appendChild(Ingredient7);
+                    // Create and append the Ingredients section
+                    const ingredientsDiv = document.createElement('div');
 
-                    const Ingredient8 = document.createElement('p');
-                    Ingredient8.textContent = `${strIngredient8}: ${strMeasure8}`;
-                    mealDetail.appendChild(Ingredient8);
-                    
-                    const Ingredient9 = document.createElement('p');
-                    Ingredient9.textContent = `${strIngredient9}: ${strMeasure9}`;
-                    mealDetail.appendChild(Ingredient9);
+                    const ingredientsHeading = document.createElement('h1');
+                    ingredientsHeading.textContent = 'Ingredients';
+                    ingredientsDiv.appendChild(ingredientsHeading);
 
-                    const Ingredient10 = document.createElement('p');
-                    Ingredient10.textContent = `${strIngredient10}: ${strMeasure10}`;
-                    mealDetail.appendChild(Ingredient10);
+                    const ingredients = [
+                        { name: strIngredient1, measure: strMeasure1 },
+                        { name: strIngredient2, measure: strMeasure2 },
+                        { name: strIngredient3, measure: strMeasure3 },
+                        { name: strIngredient4, measure: strMeasure4 },
+                        { name: strIngredient5, measure: strMeasure5 },
+                        { name: strIngredient6, measure: strMeasure6 },
+                        { name: strIngredient7, measure: strMeasure7 },
+                        { name: strIngredient8, measure: strMeasure8 },
+                        { name: strIngredient9, measure: strMeasure9 },
+                        { name: strIngredient10, measure: strMeasure10 },
+                        { name: strIngredient11, measure: strMeasure11 },
+                        { name: strIngredient12, measure: strMeasure12 },
+                        { name: strIngredient13, measure: strMeasure13 },
+                        { name: strIngredient14, measure: strMeasure14 },
+                        { name: strIngredient15, measure: strMeasure15 },
+                        { name: strIngredient16, measure: strMeasure16 },
+                        { name: strIngredient17, measure: strMeasure17 },
+                        { name: strIngredient18, measure: strMeasure18 },
+                        { name: strIngredient19, measure: strMeasure19 },
+                        { name: strIngredient20, measure: strMeasure20 }
+                    ];
 
-                    const Ingredient11 = document.createElement('p');
-                    Ingredient11.textContent = `${strIngredient11}: ${strMeasure11}`;
-                    mealDetail.appendChild(Ingredient11);
+                    ingredients.forEach(ingredient => {
+                        if (ingredient.name.trim() && ingredient.measure.trim()) {
+                            const li = document.createElement('li');
+                            li.textContent = `${ingredient.name}: ${ingredient.measure}`;
+                            ingredientsDiv.appendChild(li);
+                        }
+                    });
 
-                    const Ingredient12 = document.createElement('p');
-                    Ingredient12.textContent = `${strIngredient12}: ${strMeasure12}`;
-                    mealDetail.appendChild(Ingredient12);
-
-                    const Ingredient13 = document.createElement('p');
-                    Ingredient13.textContent = `${strIngredient13}: ${strMeasure13}`;
-                    mealDetail.appendChild(Ingredient13);
-
-                    const Ingredient14 = document.createElement('p');
-                    Ingredient14.textContent = `${strIngredient14}: ${strMeasure14}`;
-                    mealDetail.appendChild(Ingredient14);
-                    
-                    const Ingredient15 = document.createElement('p');
-                    Ingredient15.textContent = `${strIngredient15}: ${strMeasure15}`;
-                    mealDetail.appendChild(Ingredient15);
-
-                    const Ingredient16 = document.createElement('p');
-                    Ingredient16.textContent = `${strIngredient16}: ${strMeasure16}`;
-                    mealDetail.appendChild(Ingredient16);
-
-                    const Ingredient17 = document.createElement('p');
-                    Ingredient17.textContent = `${strIngredient17}: ${strMeasure17}`;
-                    mealDetail.appendChild(Ingredient17);
-                    
-                    const Ingredient18 = document.createElement('p');
-                    Ingredient18.textContent = `${strIngredient18}: ${strMeasure18}`;
-                    mealDetail.appendChild(Ingredient18);
-
-                    const Ingredient19 = document.createElement('p');
-                    Ingredient19.textContent = `${strIngredient19}: ${strMeasure19}`;
-                    mealDetail.appendChild(Ingredient19);
-                    
-                    const Ingredient20 = document.createElement('p');
-                    Ingredient20.textContent = `${strIngredient20}: ${strMeasure20}`;
-                    mealDetail.appendChild(Ingredient20);
-
+                    mealDetail.appendChild(ingredientsDiv);
+                    const ingredients_instructions_div = document.createElement('div');
+                    ingredients_instructions_div.appendChild(ingredientsDiv);
+                    ingredients_instructions_div.appendChild(instructionsDiv);
+                    mealDetail.appendChild(ingredients_instructions_div);
                 } else {
                     mealDetail.textContent = 'Meal details not found.';
                 }

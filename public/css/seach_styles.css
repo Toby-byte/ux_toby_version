@@ -1,0 +1,29 @@
+#mealDetail {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+li {
+    margin: 10px;
+}
+
+img {
+    max-width: 90%;
+    border-radius: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 36px;
+  }
