@@ -1,5 +1,6 @@
 
-.rtw-header {
+/* General styles for the sections */
+.wel-header, .rtw-header {
     display: flex;
     justify-content: center;
     padding: 1rem;
@@ -7,46 +8,48 @@
     color: var(--logoColor);
 }
 
-.rtw-text-container {
+.wel-text-container, .rtw-text-container {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     margin-bottom: 0.5rem;
-    margin-top: -1rem;
+    margin-top: -2rem;
 }
 
-.rtw-text {
-    display: flex;  /* Added to ensure the content inside .rtw-text aligns properly */
-    align-items: center;  /* Added for vertical alignment */
+.wel-text, .rtw-text {
+    display: flex;
+    align-items: center;
     justify-content: center;
-     padding: 1rem;
+    padding: 1rem;
     font-size: 1.2rem;
     font-weight: 400;
     color: var(--bodyTextColor);
 }
 
-/* Styles for larger screens */
-@media (min-width: 600px) {
-    .rtw-header {
-        font-size: 2.5rem;  /* Increase font size for larger screens */
-    }
-
-    .rtw-text {
-        font-size: 1.4rem;  /* Increase font size for larger screens */
-    }
+/* Container for the sections */
+.main-content {
+    display: flex;
+    flex-direction: column;
 }
 
 @media (min-width: 900px) {
-    .rtw-header {
-        font-size: 3rem;  /* Increase font size for even larger screens */
+    .main-content {
+        flex-direction: row;
+        justify-content: space-between;
     }
 
-    .rtw-text {
-        font-size: 1.6rem;  /* Increase font size for even larger screens */
+    .welcome {
+        order: 2;
+    }
+
+    .recipes-of-the-week {
+        order: 1;
+    }
+
+    .wel-header, .rtw-header {
+        font-size: 3rem;
+    }
+
+    .wel-text, .rtw-text {
+        font-size: 1.6rem;
     }
 }
-
-
-
-  
-
-
