@@ -15,50 +15,50 @@
 }
 
 .card1 {
-    color: white;
+    color: var(--cardsTextColor);
     padding: 5rem 0 0;
     max-width: 35rem;
     border-radius: 0.5rem; 
     overflow: hidden;
     background-image: url('https://www.themealdb.com/images/media/meals/ctg8jd1585563097.jpg');
     background-size: cover;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5rem 1rem var(--shadowTheHedgehog);
     transition: transform 500ms ease;
 }
 
 .card2 {
-    color: white;
+    color: var(--cardsTextColor);
     padding: 5rem 0 0;
     max-width: 35rem;
     border-radius: 0.5rem; 
     overflow: hidden;
     background-image: url('https://www.themealdb.com/images/media/meals/58oia61564916529.jpg');
     background-size: cover;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5rem 1rem var(--shadowTheHedgehog);
     transition: transform 500ms ease;
 }
 
 .card3 {
-    color: white;
+    color: var(--cardsTextColor);
     padding: 5rem 0 0;
     max-width: 35rem;
     border-radius: 0.5rem; 
     overflow: hidden;
     background-image: url('https://www.themealdb.com/images/media/meals/mlchx21564916997.jpg');
     background-size: cover;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5rem 1rem var(--shadowTheHedgehog);
     transition: transform 500ms ease;
 }
 
 .card4 {
-    color: white;
+    color: var(--cardsTextColor);
     padding: 5rem 0 0;
     max-width: 35rem;
     border-radius: 0.5rem; 
     overflow: hidden;
     background-image: url('https://www.themealdb.com/images/media/meals/uuyrrx1487327597.jpg');
     background-size: cover;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5rem 1rem var(--shadowTheHedgehog);
     transition: transform 500ms ease;
 }
 

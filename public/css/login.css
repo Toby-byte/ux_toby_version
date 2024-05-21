@@ -30,9 +30,9 @@ main {
 
 .login-container {
     width: 25rem;
-    background-color: #fff;
+    background-color: var(--loginBgColor);
     border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5rem 1rem var(--shadowTheHedgehog);
 }
 
 .login-wrapper {
@@ -41,10 +41,10 @@ main {
 
 .signup-container {
     width: 25rem;
-    background-color: #fff;
+    background-color: var(--loginBgColor);
     padding: 1rem;
     border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5rem 1rem var(--shadowTheHedgehog);
 }
 
 .signup-wrapper {
@@ -61,7 +61,7 @@ main {
 
 .login-input {
     padding: 0.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid;
     border-radius: 0.25rem;
 }
 
@@ -76,8 +76,8 @@ main {
     height: 3rem;
     border: none;
     border-radius: 0.25rem;
-    background-color: #007bff;
-    color: #fff;
+    background-color: var(--logoColor);
+    color: var(--bodyTextColor);
     cursor: pointer;
     font-size: 1.5rem;
     text-decoration: none;
@@ -85,8 +85,8 @@ main {
 }
 
 .login-button:hover{
-    background-color: yellow;
-    color: black;
+    background-color: var(--hoverColor);
+    color: var(--hoverTextColor);
 }
 
 .center {
