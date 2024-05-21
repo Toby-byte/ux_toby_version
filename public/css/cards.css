@@ -10,8 +10,8 @@
 .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    margin: 1rem;
+    gap: 2rem;
+    margin: 1rem 1rem 5rem 1rem;
 }
 
 .card1 {
@@ -70,6 +70,10 @@
 .card3:hover, 
 .card4:hover {
     transform: scale(1.05);
+}
+
+.card-1 {
+    margin: 0 1.5rem 3rem 1.5rem;
 }
 
 .card-content {

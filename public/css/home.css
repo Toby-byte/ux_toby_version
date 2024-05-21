@@ -8,48 +8,112 @@
     color: var(--logoColor);
 }
 
+.wel-header {
+    padding: 3rem 1rem 0 1rem;
+}
+
+.rtw-header {
+    padding: 1rem;
+    font-weight: bold;
+}
+
 .wel-text-container, .rtw-text-container {
     display: flex;
     justify-content: center;
     margin-bottom: 0.5rem;
-    margin-top: -2rem;
 }
 
 .wel-text, .rtw-text {
     display: flex;
     align-items: center;
-    justify-content: center;
     padding: 1rem;
     font-size: 1.2rem;
     font-weight: 400;
     color: var(--bodyTextColor);
 }
-
 /* Container for the sections */
-.main-content {
+.main {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
-@media (min-width: 900px) {
-    .main-content {
-        flex-direction: row;
-        justify-content: space-between;
-    }
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    list-style: none;
+    padding: 0;
+    max-width: 1080px;
+    justify-content: center;
+}
 
-    .welcome {
-        order: 2;
+.recipes-of-the-week {
+    display: grid;
+    grid-gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+@media(min-width: 450px){
+    .main-content {
+        max-width: 90%;
     }
 
     .recipes-of-the-week {
-        order: 1;
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .wel-header, .rtw-header {
+    .rtw-header {
+        font-size: 2rem;
+        grid-column: span 2;
+    }
+
+    .rtw-text {
+        justify-content: right;
+        text-align: right;
+    }
+
+    .main {
+        max-width: 90%;
+    }
+
+}
+
+
+@media (min-width: 768px) {
+    .main-content {
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+    }
+
+    .welcome {
+        grid-column: span 2;
+    }
+
+    .recipes-of-the-week {
+        grid-column: 2 / span 2;
+        grid-row: 3;
+    }
+
+    .recipes-of-the-week article {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wel-header {
         font-size: 3rem;
+        grid-column: span 3;
+        justify-content: left;
     }
 
-    .wel-text, .rtw-text {
+    .wel-text {
         font-size: 1.6rem;
+    }
+
+    .rtw-text {
+        font-size: 1.4rem;
     }
 }
