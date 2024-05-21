@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     profileInfo.innerHTML = `<p>Email: ${userProfile.email}</p>`; // Displaying email only for demonstration
     
     // Retrieve favorite recipes from localStorage
-    const favoriteRecipesKey = `user_${userProfile.email}_favorites`; // Changed from id to email
+    const favoriteRecipesKey = `user_${userProfile.email}_favorites`;
     const favoriteRecipes = JSON.parse(localStorage.getItem(favoriteRecipesKey)) || [];
 
     // Display favorite recipes
