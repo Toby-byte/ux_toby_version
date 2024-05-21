@@ -48,3 +48,13 @@
 .grid-item button:hover {
     background-color: #c0392b; /* Change background color on hover */
 }
+
+@media only screen and (max-width: 768px) {
+    .grid-container {
+        display: block; /* Turn off the grid for screens smaller than 600px */
+    }
+
+    .grid-item {
+        margin-bottom: 20px;
+    }
+}
