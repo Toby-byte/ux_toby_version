@@ -50,20 +50,20 @@ if (signupForm) {
     });
 
     function isValidEmail(email) {
-        // Regular expression for validating email format
+        // email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
 
     function isValidPassword(password) {
-        // Regular expression for validating password strength
+        // password validation
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
         return passwordRegex.test(password);
     }
 }
 
 if (loginForm) {
-    // Code for login form
+    
 
     loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -83,10 +83,34 @@ if (loginForm) {
             // Store logged-in user's email in sessionStorage
             sessionStorage.setItem('loggedInUser', email);
             
-            // Redirect or do something else
+            // Redirect 
             window.location.href = "index.html";
         } else {
             alert('Invalid email or password!');
         }
     });
 }
+
+// Function to check if the user is logged in
+function checkLoggedIn() {
+    const loggedInUser = sessionStorage.getItem('loggedInUser');
+    return loggedInUser !== null;
+}
+
+// Protect restricted pages
+function protectPage() {
+    if (!checkLoggedIn()) {
+        alert('You must be logged in to access this page.');
+        window.location.href = 'login.html'; // Redirect to the login page
+    }
+}
+
+// Check and protect the page on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    const restrictedPages = ['profile.html', 'logout.html'];
+    const currentPage = window.location.pathname.split('/').pop();
+    
+    if (restrictedPages.includes(currentPage)) {
+        protectPage();
+    }
+});
