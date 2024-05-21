@@ -1,9 +1,10 @@
 @import 'styles.css';
 
 img {
-    width: 100%;
+    width: 90%;
     aspect-ratio: 1/1;
     object-fit: cover;
+    margin: 1rem;
 }
 
 .about{
@@ -19,6 +20,10 @@ img {
     padding: 0 1rem 0 0;
     max-width: 768px;
     margin: 0 auto;
+}
+
+.description1 {
+    margin: 1rem;
 }
 
 .team {
@@ -38,11 +43,78 @@ img {
 .heading {
     font-size: 2rem;
     grid-column: span 2;
+    margin: 1rem;
 }
 
 .title {
     font-size: 3rem;
+    margin: 1rem;
 }
+
+
+.form {
+    width: 95%;
+    max-width: 600px;
+    margin: 20px auto; /* Added margin for top and bottom */
+    padding: 20px;
+    background-color: var(--footerColor);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.form legend {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--bodyTextColor);
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form textarea {
+    width: calc(100% - 22px); 
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.form input[type="submit"] {
+   cursor: pointer;
+   display: inline;
+   text-decoration: none;
+   color: black;
+   background-color: var(--logoColor);
+   padding: 0.5rem 1rem;
+   border-radius: 0.25rem;
+   max-width: max-content;
+   transition: background-color 0.3s ease;
+}
+
+.form input[type="submit"]:hover {
+    color: var(--footerColor);
+}
+
+
+
 
 @media screen and (min-width: 768px) {
     .about {
