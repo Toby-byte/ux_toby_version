@@ -3,12 +3,17 @@
     {
       "email": "albertlampeskærm@pismail.com",
       "password": "Qwerty98!",
-      "id": 1
+      "id": "1"
     },
     {
       "email": "lars@gmail.com",
       "password": "Qwerty98!",
-      "id": 2
+      "id": "2"
+    },
+    {
+      "id": "318f",
+      "email": "cybertoby2349@gmail.com",
+      "password": "1234567To@"
     }
   ]
 }

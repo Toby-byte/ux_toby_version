@@ -39,7 +39,7 @@ document.getElementById('searchButton').addEventListener('click', function() {
                     window.location.href = `meal-detail.html?id=${meal.idMeal}`;
                 });
 
-                const h1 = document.createElement('h1');
+                const h1 = document.createElement('h2');
                 h1.textContent = meal.strMeal;
                 li.appendChild(h1);
 
