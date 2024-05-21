@@ -50,20 +50,20 @@ if (signupForm) {
     });
 
     function isValidEmail(email) {
-        // Regular expression for validating email format
+        // email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
 
     function isValidPassword(password) {
-        // Regular expression for validating password strength
+        // password validation
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
         return passwordRegex.test(password);
     }
 }
 
 if (loginForm) {
-    // Code for login form
+    
 
     loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -83,7 +83,7 @@ if (loginForm) {
             // Store logged-in user's email in sessionStorage
             sessionStorage.setItem('loggedInUser', email);
             
-            // Redirect or do something else
+            // Redirect 
             window.location.href = "index.html";
         } else {
             alert('Invalid email or password!');
