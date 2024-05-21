@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 li.appendChild(button);
 
                 const favoriteButton = document.createElement('button');
+                favoriteButton.classList = 'favoriteButton';
                 favoriteButton.textContent = isFavorite(meal.idMeal) ? '✓ Favorited' : '★ Favorite';
                 favoriteButton.addEventListener('click', function() {
                     toggleFavorite(meal, favoriteButton);
