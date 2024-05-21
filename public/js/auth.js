@@ -90,3 +90,27 @@ if (loginForm) {
         }
     });
 }
+
+// Function to check if the user is logged in
+function checkLoggedIn() {
+    const loggedInUser = sessionStorage.getItem('loggedInUser');
+    return loggedInUser !== null;
+}
+
+// Protect restricted pages
+function protectPage() {
+    if (!checkLoggedIn()) {
+        alert('You must be logged in to access this page.');
+        window.location.href = 'login.html'; // Redirect to the login page
+    }
+}
+
+// Check and protect the page on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    const restrictedPages = ['profile.html', 'logout.html'];
+    const currentPage = window.location.pathname.split('/').pop();
+    
+    if (restrictedPages.includes(currentPage)) {
+        protectPage();
+    }
+});
