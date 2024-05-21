@@ -1,4 +1,12 @@
 
+.card-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-size: 2rem;
+    color: var(--logoColor);
+}
+
 .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -14,6 +22,7 @@
     overflow: hidden;
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     transition: transform 500ms ease;
 }
 
@@ -53,6 +62,7 @@
 .card-title {
     position: relative;
     margin-bottom: 0.5rem;
+    color: var(--cardsTextColor);
 }
 
 .card-title::after {
@@ -73,7 +83,7 @@ transition: transform 500ms ease;
 }
 
 .card-body {
-    color: rgb(255, 255, 255 / 0.85);
+    color: var(--cardsTextColor);
 }
 
 .card-btn {
@@ -81,7 +91,7 @@ transition: transform 500ms ease;
    display: inline;
    text-decoration: none;
    color: black;
-   background-color: greenyellow;
+   background-color: var(--logoColor);
    padding: 0.5rem 1rem;
    border-radius: 0.25rem;
    max-width: max-content;
@@ -89,7 +99,7 @@ transition: transform 500ms ease;
 
 .card-btn:hover,
 .card-btn:focus{
-    background-color: green;
+    color: var(--cardsTextColor);
 }
 
 @media (max-width: 768px) {

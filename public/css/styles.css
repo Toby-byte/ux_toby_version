@@ -1,5 +1,6 @@
 @import '_variables.css';
 @import 'cards.css';
+@import 'home.css';
 
 
 *{
@@ -269,6 +270,8 @@ footer{
 
 /* end of footer */
 
+/* start of @mediea */
+
 @media(max-width: 768px){
   .hideOnMobile{
     display: none;
@@ -314,6 +317,7 @@ footer{
   }
 }
 
+
 @media(max-width: 450px){
   .sidebar{
     width: 50%;
@@ -339,3 +343,5 @@ footer{
     padding: 2rem 0;
   }
 }
+
+/* end of @mediea */
