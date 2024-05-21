@@ -9,11 +9,12 @@
 }
 
 .wel-header {
-    padding: 1rem 1rem 0 1rem;
+    padding: 3rem 1rem 0 1rem;
 }
 
 .rtw-header {
     padding: 1rem;
+    font-weight: bold;
 }
 
 .wel-text-container, .rtw-text-container {
@@ -30,20 +31,18 @@
     font-weight: 400;
     color: var(--bodyTextColor);
 }
-.rtw-text {
-justify-content: right;
-    text-align: right;
-}
 /* Container for the sections */
 .main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .main-content {
     display: grid;
+    grid-template-columns: 1fr;
     grid-gap: 1rem;
     list-style: none;
     padding: 0;
@@ -56,29 +55,58 @@ justify-content: right;
     grid-gap: 1rem;
     list-style: none;
     padding: 0;
-    grid-column: 2;
-    grid-row: 3;
 }
 
-@media (min-width: 768px) {
+@media(min-width: 450px){
     .main-content {
-        grid-template-columns: repeat(3, 1fr);
+        max-width: 90%;
     }
 
     .recipes-of-the-week {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rtw-header {
+        font-size: 2rem;
         grid-column: span 2;
+    }
+
+    .rtw-text {
+        justify-content: right;
+        text-align: right;
+    }
+
+    .main {
+        max-width: 90%;
+    }
+
+}
+
+
+@media (min-width: 768px) {
+    .main-content {
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+    }
+
+    .welcome {
+        grid-column: span 2;
+    }
+
+    .recipes-of-the-week {
+        grid-column: 2 / span 2;
+        grid-row: 3;
+    }
+
+    .recipes-of-the-week article {
+        justify-content: center;
+        align-items: center;
     }
 
     .wel-header {
         font-size: 3rem;
         grid-column: span 3;
         justify-content: left;
-    }
-
-    .rtw-header {
-        font-size: 2rem;
-        grid-column: span 2;
     }
 
     .wel-text {
