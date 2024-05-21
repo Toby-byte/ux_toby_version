@@ -1,0 +1,55 @@
+
+/* General styles for the sections */
+.wel-header, .rtw-header {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 2rem;
+    color: var(--logoColor);
+}
+
+.wel-text-container, .rtw-text-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    margin-top: -2rem;
+}
+
+.wel-text, .rtw-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--bodyTextColor);
+}
+
+/* Container for the sections */
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 900px) {
+    .main-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .welcome {
+        order: 2;
+    }
+
+    .recipes-of-the-week {
+        order: 1;
+    }
+
+    .wel-header, .rtw-header {
+        font-size: 3rem;
+    }
+
+    .wel-text, .rtw-text {
+        font-size: 1.6rem;
+    }
+}

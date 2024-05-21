@@ -1,8 +1,6 @@
 @import '_variables.css';
-@import 'aboutus.css';
-@import 'contactus.css';
-@import 'signup.css';
 @import 'cards.css';
+@import 'home.css';
 
 
 *{
@@ -12,16 +10,34 @@
   list-style: none;
 }
 
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: var(--bodyTextColor);
+}
+
+
+.icon:hover {
+  fill: var(--logoColor);
+}
+
 .logo {
   display: flex;
   justify-content: center;
-  margin-bottom: -1rem;
-  font-family: "Indie Flower", cursive;
+  font-family: var(--TitleFont);
   font-weight: 400;
   font-style: normal;
-  font-size: 2rem;
   color: var(--logoColor);
   text-decoration: none;
+}
+
+.logo h1 {
+  font-size: 4rem;
 }
 
 body{
@@ -29,16 +45,44 @@ body{
   background-color: var(--bgColor);
 }
 
+h1 {
+  font-family: var(--TitleFont);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  color: var(--logoColor);
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: var(--SubtitleFont);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--logoColor);
+}
+
+h2 {
+  font-weight: bold;
+}
+
+p, a  {
+  font-family: var(--BodyFont);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--bodyTextColor);
+}
+
 /* start of header */
 
 header {
-  padding: 10px 0;
+  padding-top: 1rem;
   display: flex;
   justify-content: center;
   text-decoration: none;
 }
 
 nav{
+  display: flex;
+  justify-content: space-between;
   border-top: 3px solid var(--logoColor);
   max-width: 90%; /* Adjust this value as needed */
   margin-left: auto; /* Align the nav to the right */
@@ -46,19 +90,37 @@ nav{
 }
 
 nav ul{
-  width: 100%;
+  width: 50%;
   list-style: none;
   display: flex;
   align-items: center;
 }
 
+nav #navbar {
+  justify-content: right;
+}
+
+nav #navbar li {
+  padding: 0 1rem;
+}
+
+nav #navbar li:hover{
+  padding-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
 nav li{
   height: 50px;
+  padding: 0 1rem;
+}
+
+nav li:hover{
+  padding-top: 0.5rem;
+  transition: all 0.3s ease;
 }
 
 nav a{
   height: 100%;
-  padding: 0 30px;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -68,7 +130,6 @@ nav a{
 
 nav a:hover{
   color: var(--logoColor);
-	padding-top: 8px;
   font-size: 1.1rem;
 }
 
@@ -91,17 +152,19 @@ input {
 
 #searchButton {
   cursor: pointer;
-  display: inline;
-  text-decoration: none;
-  color: black;
-  background-color: greenyellow;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  max-width: max-content;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+  font: inherit;
+  border-radius: 0;
+  appearance: none;
+  padding-top: 0.2rem;
 }
 
 #searchButton:hover {
-  background-color: green;
+  padding-top: 0.2rem;
 }
 
 .sidebar{
@@ -139,7 +202,7 @@ input {
 footer{
 	background-color: var(--footerColor);
   /* position: fixed; */
-  padding: 14px;
+  padding: 3rem 1rem;
   bottom: 0;
   width: 100%;
 }
@@ -151,6 +214,7 @@ footer{
 .row{
 	display: flex;
 	flex-wrap: wrap;
+  justify-content: center;
 }
 
 .footer-col{
@@ -162,8 +226,8 @@ footer{
 	font-size: 18px;
 	color: var(--bodyTextColor);
 	text-transform: capitalize;
-	margin-bottom: 35px;
-	font-weight: 500;
+	margin-bottom: 1rem;
+  font-weight: bold;
 	position: relative;
   border-bottom: 0.2rem solid var(--logoColor);
   width: 45%;
@@ -206,6 +270,8 @@ footer{
 
 /* end of footer */
 
+/* start of @mediea */
+
 @media(max-width: 768px){
   .hideOnMobile{
     display: none;
@@ -242,8 +308,15 @@ footer{
     margin-top: 2rem;
     margin-bottom: 1rem;
     width: 30%;
+    text-align: center;
+  }
+
+  .logo h1 {
+    font-size: 3rem;
+    padding: 1rem 0;
   }
 }
+
 
 @media(max-width: 450px){
   .sidebar{
@@ -255,6 +328,20 @@ footer{
   }
 
   .footer-col{
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    align-items: center;
+  }
+
+  .footer-col ul li {
+    text-align: center;
+  }
+
+  .logo h1 {
+    font-size: 2rem;
+    padding: 2rem 0;
+  }
 }
-}
+
+/* end of @mediea */
