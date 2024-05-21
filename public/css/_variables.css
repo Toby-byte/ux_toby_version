@@ -6,11 +6,15 @@
     --bgColor: #fbf8f3; /* Background color */
     --logoColor: #ED4332; /* Logo color */
     --hoverColor: #bc362a; /* Logo color */
+    --hoverTextColor:#ffffff; /* Hover text color */
     --footerColor: #eee2cd; /* Footer color */
     --bodyTextColor: #000000; /* Body text color */
     --cardsTextColor: #ffffff; /* Cards text color */
+    --loginBgColor: #ffffff; /* Login background color */
 
     --TitleFont: 'Calistoga', cursive;
     --SubtitleFont: 'Caladea', serif;
     --BodyFont: 'Poppins', sans-serif;
+
+    --shadowTheHedgehog: rgba(0, 0, 0, 0.1);
 }
