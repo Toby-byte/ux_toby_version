@@ -149,7 +149,6 @@ nav a:hover{
 input {
   width: 100%;
   padding: 0.4rem;
-  border: var(--bgColor);
   border-radius: 4px;
   line-height: 1;
 }
