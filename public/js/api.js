@@ -1,5 +1,6 @@
 document.getElementById('searchButton').addEventListener('click', function() {
     const mealInput = document.getElementById('mealInput').value;
+    console.log(mealInput)
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealInput}`;
 
     fetch(url)
