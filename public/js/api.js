@@ -31,7 +31,8 @@ document.getElementById('searchButton').addEventListener('click', function() {
                 li.className = 'grid-item'; // Use a general class for styling
                 li.style.gridColumn = gridColumns[(index - 1) % gridColumns.length]; // Set grid column dynamically
                 li.style.backgroundImage = `url(${meal.strMealThumb})`; // Set background image from API
-
+                li.setAttribute('aria-label', meal.strMeal); // Add aria-label for accessibility
+                
                 const button = document.createElement('button');
                 button.textContent = "Click here to see details";
 
