@@ -26,9 +26,12 @@
     transition: transform 500ms ease;
 }
 
-
 .card:hover {
     transform: scale(1.05);
+}
+
+.card-1 {
+    margin: 0 1.5rem 3rem 1.5rem;
 }
 
 .card-content {
