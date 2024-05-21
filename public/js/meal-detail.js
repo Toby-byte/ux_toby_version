@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     // Add favorite button
                     const favoriteButton = document.createElement('button');
+                    favoriteButton.className = 'FavoriteButton';
                     const loggedInUserEmail = sessionStorage.getItem('loggedInUser');
                     const favoriteRecipesKey = `user_${loggedInUserEmail}_favorites`;
                     let favoriteRecipes = JSON.parse(localStorage.getItem(favoriteRecipesKey)) || [];
