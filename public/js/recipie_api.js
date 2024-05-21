@@ -32,18 +32,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 li.style.backgroundImage = `url(${meal.strMealThumb})`; // Set background image from API
                 li.setAttribute('aria-label', meal.strMeal); // Add aria-label for accessibility
                 
-                const button = document.createElement('button');
-                button.textContent = "Click here to see details";
-
-                button.addEventListener('click', function() {
-                    window.location.href = `meal-detail.html?id=${meal.idMeal}`;
-                });
-
                 const h1 = document.createElement('h2');
                 h1.textContent = meal.strMeal;
                 li.appendChild(h1);
 
+                const button = document.createElement('button');
+                button.textContent = "Click here to see details";
+                button.addEventListener('click', function() {
+                    window.location.href = `meal-detail.html?id=${meal.idMeal}`;
+                });
                 li.appendChild(button);
+
+                const favoriteButton = document.createElement('button');
+                favoriteButton.textContent = '★ Favorite';
+                favoriteButton.addEventListener('click', function() {
+                    addToFavorites(meal);
+                    favoriteButton.textContent = '✓ Favorited';
+                });
+                li.appendChild(favoriteButton);
 
                 return li;
             }
@@ -58,4 +64,24 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error fetching data: ', error);
             document.getElementById('mealDisplay').textContent = 'Failed to fetch meal data.';
         });
+
+    function addToFavorites(meal) {
+        const loggedInUserEmail = sessionStorage.getItem('loggedInUser');
+        if (!loggedInUserEmail) {
+            alert('You must be logged in to add favorites.');
+            return;
+        }
+
+        const favoriteRecipesKey = `user_${loggedInUserEmail}_favorites`;
+        const favoriteRecipes = JSON.parse(localStorage.getItem(favoriteRecipesKey)) || [];
+
+        // Check if the recipe is already in favorites
+        if (!favoriteRecipes.some(fav => fav.id === meal.idMeal)) {
+            favoriteRecipes.push({ id: meal.idMeal, name: meal.strMeal });
+            localStorage.setItem(favoriteRecipesKey, JSON.stringify(favoriteRecipes));
+            alert(`${meal.strMeal} has been added to your favorites!`);
+        } else {
+            alert(`${meal.strMeal} is already in your favorites.`);
+        }
+    }
 });
