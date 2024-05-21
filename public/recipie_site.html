@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meal Details</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/search_css.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/seach_styles.css">
-    <script src="js/meal-detail.js" defer></script>
+    <script src="js/recipie_api.js" defer></script>
 </head>
 <body>
     <nav>
-      <ul class="sidebar">
-        <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="recipie_site.html">Recipes</a></li>
-        <li><a href="contactus.html">Contact Us</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-        <!-- <li><a href="signup.html">Sign up</a></li>
-        <li><a href="login.html">Login</a></li> -->
-      </ul>
-      <ul class="hideOnMobile">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="recipie_site.html">Recipes</a></li>
-        <li><a href="aboutus.html">About</a></li>
-        <li><a href="contactus.html">Contact</a></li>
-      </ul>
-      <ul id="navbar">
+        <ul class="sidebar">
+          <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipie_site.html">Recipes</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <!-- <li><a href="signup.html">Sign up</a></li>
+          <li><a href="login.html">Login</a></li> -->
+        </ul>
+        <ul class="hideOnMobile">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipie_site.html">Recipes</a></li>
+          <li><a href="aboutus.html">About</a></li>
+          <li><a href="contactus.html">Contact</a></li>
+        </ul>
+        <ul id="navbar">
     
           <!-- <li class="hideOnMobile"><a href="#">Sign up</a></li>
           <li class="hideOnMobile"><a href="#">Login</a></li> -->
@@ -36,7 +36,9 @@
           </li>
         </ul>
       </nav>
-    <div id="mealDetail"></div>
-    
+    <main>
+        <section id="mealDisplay">
+        </section>
+    </main>
 </body>
 </html>
