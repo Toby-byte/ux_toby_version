@@ -44,20 +44,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Create list item with image and name
         const listItem = document.createElement('li');
-        listItem.className = 'favorite-recipe-item';
+        listItem.className = 'grid-item';
+        listItem.style.backgroundImage = `url(${meal.strMealThumb})`;
+        listItem.setAttribute('aria-label', meal.strMeal);
+        listItem.alt = meal.strMeal;
 
-        const img = document.createElement('img');
-        img.src = meal.strMealThumb;
-        img.alt = meal.strMeal;
-        img.className = 'favorite-recipe-image';
-
-        const mealName = document.createElement('p');
+        const mealName = document.createElement('h2');
         mealName.textContent = meal.strMeal;
-        mealName.className = 'favorite-recipe-name';
 
-        listItem.appendChild(img);
+        const listItemButton = document.createElement('button');
+        listItemButton.textContent = "Click here to see details";
+
         listItem.appendChild(mealName);
-
+        listItem.appendChild(listItemButton);
         favoriteRecipesList.appendChild(listItem);
 
         // Add click event listener to each favorite recipe
