@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/profile.css">
     <script src="js/script.js" defer></script>
     <script src="js/profile.js" defer></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -35,11 +35,15 @@
       </li>
     </ul>
   </nav>
-  <main>
-    <h1>Welcome to Your Profile</h1>
-    <div id="profile-info"></div>
-    <h2>Your Favorite Recipes</h2>
-    <ul id="favorite-recipes"></ul>
+  <main class="main">
+    <h1>Your Profile</h1>
+    <section class="profile-container">
+      <div id="profile-info"></div>
+    </section>
+    <section class="recipes-container">
+      <h2>Your Favorite Recipes</h2>
+      <ul class="grid-container" id="favorite-recipes"></ul>
+    </section>
 </main>
 
 <footer>
