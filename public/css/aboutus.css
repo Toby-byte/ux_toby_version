@@ -6,8 +6,29 @@ img {
     object-fit: cover;
 }
 
+.kitchenImage {
+    place-self: center;
+    width: 80%;
+    margin-bottom: 1rem;    
+}
+
 .team_img {
     border-radius: 50%;
+    margin: -0.5rem;
+}
+
+.description1 {
+    margin: 1rem;
+}
+
+.foodImage {
+    place-self: center;
+    width: 80%;
+    margin-bottom: 1rem;
+}
+
+.foodtext {
+     margin: 1rem;
 }
 
 .about{
@@ -22,7 +43,7 @@ img {
     justify-content: center;
     padding: 0 1rem 0 0;
     max-width: 768px;
-    margin: 0 auto;
+    margin: 1rem;
 }
 
 .team {
@@ -37,15 +58,26 @@ img {
     display: grid;
     grid-template-columns: 20% 80%;
     border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+
+.linkedin {
+    margin-bottom: 1rem;
 }
 
 .heading {
     font-size: 2rem;
     grid-column: span 2;
+    text-align: center;
+    margin: 1rem;
+
 }
 
 .title {
-    font-size: 3rem;
+    font-size: 2.6rem;
+    text-align: center;
+    margin: 1rem;
 }
 
 @media screen and (min-width: 768px) {
