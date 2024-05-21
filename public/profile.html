@@ -7,6 +7,29 @@
     <script src="js/script.js" defer></script>
     <script src="js/profile.js" defer></script>
 </head>
+<nav>
+    <ul class="sidebar">
+      <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+      <li><a href="#">Recipes</a></li>
+      <li><a href="contactus.html">Contact Us</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <!-- <li><a href="signup.html">Sign up</a></li>
+      <li><a href="login.html">Login</a></li> -->
+    </ul>
+
+    <ul id="navbar">
+      <li class="hideOnMobile"><a href="#">Recipes</a></li>
+      <li class="hideOnMobile"><a href="aboutus.html">About Us</a></li>
+      <li class="hideOnMobile"><a href="contactus.html">Contact Us</a></li>
+      <!-- <li class="hideOnMobile"><a href="#">Sign up</a></li>
+      <li class="hideOnMobile"><a href="#">Login</a></li> -->
+      <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+      <li id="search-container">
+      <input type="text" id="mealInput" placeholder="Enter meal name">
+        <button id="searchButton">Search</button>
+      </li>
+    </ul>
+  </nav>
 <body>
     <h1>Welcome to Your Profile</h1>
     <div id="profile-info"></div>

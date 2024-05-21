@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const loginListItem = document.createElement('li');
         const loginLink = document.createElement('a');
         loginLink.href = 'login.html';
-        loginLink.classList.add("hideOnMobile");
+        loginListItem.classList.add("hideOnMobile");
 
         const loginSVG = `
         <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const signupListItem = document.createElement('li');
         const signupLink = document.createElement('a');
         signupLink.href = 'signup.html';
-        signupLink.classList.add("hideOnMobile");
+        signupListItem.classList.add("hideOnMobile");
 
         const signupSVG = `
         <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">

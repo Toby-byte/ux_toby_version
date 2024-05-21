@@ -16,7 +16,7 @@
     border-radius: 20px;
 }
 
-.grid-item h1, .grid-item p, .grid-item button {
+.grid-item h2, .grid-item p, .grid-item button {
     position: absolute;
     z-index: 1;
     margin: 0;
@@ -25,7 +25,7 @@
     border-radius: 5px;
 }
 
-.grid-item h1 {
+.grid-item h2 {
     top: 10px;
     left: 10px;
 }
@@ -47,4 +47,14 @@
 
 .grid-item button:hover {
     background-color: #c0392b; /* Change background color on hover */
+}
+
+@media only screen and (max-width: 768px) {
+    .grid-container {
+        display: block; /* Turn off the grid for screens smaller than 600px */
+    }
+
+    .grid-item {
+        margin-bottom: 20px;
+    }
 }
