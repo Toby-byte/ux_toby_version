@@ -1,6 +1,11 @@
 @import '_variables.css';
 @import 'styles.css';
 
+
+.favoriteButton {
+    margin-bottom: 3rem;
+}
+
 .main {
     display: flex;
     flex-direction: column;

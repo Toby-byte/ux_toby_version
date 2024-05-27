@@ -24,6 +24,11 @@
       "id": "a217",
       "email": "a@a.com",
       "password": "Qwerty98!"
+    },
+    {
+      "id": "df60",
+      "email": "z@z.com",
+      "password": "Password123@"
     }
   ]
 }

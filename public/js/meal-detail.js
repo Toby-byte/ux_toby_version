@@ -37,11 +37,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     instructionsHeading.textContent = 'Instructions';
                     instructionsDiv.appendChild(instructionsHeading);
 
-                    const sentences = strInstructions.split(/(?<=[.!?])\s+/).filter(sentence => sentence.trim().length > 0);
+                    const formattedInstructions = formatInstructions(strInstructions);
                     const ol = document.createElement('ol');
-                    sentences.forEach(sentence => {
+                    formattedInstructions.forEach(step => {
                         const li = document.createElement('li');
-                        li.textContent = sentence.trim();
+                        li.textContent = step;
                         ol.appendChild(li);
                     });
 
@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     // Add favorite button
                     const favoriteButton = document.createElement('button');
+                    favoriteButton.className = 'FavoriteButton';
                     const loggedInUserEmail = sessionStorage.getItem('loggedInUser');
                     const favoriteRecipesKey = `user_${loggedInUserEmail}_favorites`;
                     let favoriteRecipes = JSON.parse(localStorage.getItem(favoriteRecipesKey)) || [];
@@ -109,3 +110,21 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 });
+
+function formatInstructions(instructions) {
+    // Remove nutrition facts if present
+    const nutritionFactsRegex = /Nutrition Facts.*/i;
+    instructions = instructions.replace(nutritionFactsRegex, '').trim();
+
+    // Split the instructions on numbered steps or sentence boundaries
+    const stepRegex = /\d+\.\s+/g;
+    let steps = instructions.split(stepRegex);
+
+    if (steps.length > 1) {
+        // If splitting by numbered steps worked, return the steps
+        return steps.map(step => step.trim()).filter(step => step.length > 0);
+    } else {
+        // Fallback to splitting by sentences
+        return instructions.split(/(?<=[.!?])\s+/).map(sentence => sentence.trim()).filter(sentence => sentence.length > 0);
+    }
+}

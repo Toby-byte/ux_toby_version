@@ -10,6 +10,7 @@ img {
 
 h2, h3 {
     margin-bottom: 0.5rem;
+    color: var(--logoColor);
 }
 
 main {
