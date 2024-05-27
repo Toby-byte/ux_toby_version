@@ -43,46 +43,52 @@
     width: 100%;
 }
 
-.grid-item {
+.grid-item-favorite {
     height: 200px; /* Example height */
     background-size: cover;
     background-position: center;
     position: relative; /* Ensure button positions correctly */
-    color: white; /* Text color for visibility */
+    color: var(--bgColor); /* Text color for visibility */
     border-radius: 20px;
+    display: flex;
+    align-items: start;
+    justify-content: end;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
 }
 
-.grid-item h2, .grid-item p, .grid-item button {
+.grid-item-favorite h2, .grid-item p, .grid-item button {
     position: absolute;
     z-index: 1;
     margin: 0;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background: var(--shadowTheHedgehog); /* Semi-transparent background */
     border-radius: 5px;
 }
 
-.grid-item h2 {
+.grid-item-favorite h2 {
     top: 10px;
     left: 10px;
 }
 
-.grid-item p {
+.grid-item-favorite p {
     top: 40px;
     left: 10px;
 }
 
-.grid-item button {
+.grid-item-favorite button {
     bottom: 10px;
     left: 10px;
     padding: 5px 10px; /* Button padding */
-    background-color: #e74c3c; /* Background color */
-    color: white; /* Text color */
+    background-color: var(--logoColor); /* Background color */
+    color: var(--bgColor); /* Text color */
     border: none; /* Remove default border */
     cursor: pointer; /* Cursor change on hover */
 }
 
-.grid-item button:hover {
-    background-color: #c0392b; /* Change background color on hover */
+.grid-item-favorite-button:hover {
+    background-color: var(--hoverColor); /* Change background color on hover */
 }
 
 .recipes-container {
@@ -101,7 +107,7 @@
         max-width: 90%;
     }
 
-    .grid-item {
+    .grid-item-favorite {
         margin-bottom: 20px;
     }
 }
