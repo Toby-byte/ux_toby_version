@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     const img = document.createElement('img');
                     img.src = strMealThumb;
+                    img.setAttribute('aria-label', strMeal);
                     img_name_div.appendChild(img);
 
                     const mealName = document.createElement('h1');
@@ -54,16 +55,22 @@ document.addEventListener('DOMContentLoaded', function() {
                     ingredientsHeading.textContent = 'Ingredients';
                     ingredientsDiv.appendChild(ingredientsHeading);
 
+                    // Create the ordered list (ol) element
+                    const ingredientsList = document.createElement('ol');
+
+                    // Loop to create and append li elements to the ol
                     for (let i = 1; i <= 20; i++) {
                         const ingredient = meal[`strIngredient${i}`];
                         const measure = meal[`strMeasure${i}`];
                         if (ingredient && measure) {
                             const li = document.createElement('li');
                             li.textContent = `${ingredient}: ${measure}`;
-                            ingredientsDiv.appendChild(li);
+                            ingredientsList.appendChild(li);
                         }
-                    }
+}
 
+// Append the ol to the ingredientsDiv
+ingredientsDiv.appendChild(ingredientsList);
                     const ingredients_instructions_div = document.createElement('div');
                     ingredients_instructions_div.appendChild(ingredientsDiv);
                     ingredients_instructions_div.appendChild(instructionsDiv);
