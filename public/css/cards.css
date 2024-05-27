@@ -141,7 +141,7 @@ transition: transform 500ms ease;
    cursor: pointer;
    display: inline;
    text-decoration: none;
-   color: black;
+   color: var(--bgColor);
    background-color: var(--logoColor);
    padding: 0.5rem 1rem;
    border-radius: 0.25rem;

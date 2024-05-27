@@ -37,7 +37,7 @@ body {
     cursor: pointer;
    display: inline;
    text-decoration: none;
-   color: var(--bodyTextColor);
+   color: var(--bgColor);
    background-color: var(--logoColor);
    padding: 0.5rem 1rem;
    border-radius: 0.25rem;
