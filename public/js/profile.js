@@ -31,9 +31,33 @@ document.addEventListener('DOMContentLoaded', async () => {
     const favoriteRecipesKey = `user_${userProfile.email}_favorites`;
     let favoriteRecipes = JSON.parse(localStorage.getItem(favoriteRecipesKey)) || [];
 
+    // Ensure all recipes have an idMeal property
+    favoriteRecipes = favoriteRecipes.map(recipe => {
+        if (!recipe.idMeal && recipe.id) {
+            recipe.idMeal = recipe.id;
+        }
+        return recipe;
+    });
+
     // Function to remove a recipe from the favorites list
     const removeFavoriteRecipe = (mealId) => {
+        console.log(`Removing meal ID: ${mealId}`); // Debugging step
+
+        // Additional debugging: log each recipe's ID
+        favoriteRecipes.forEach(recipe => console.log(`Existing recipe ID: ${recipe.idMeal}`));
+
         favoriteRecipes = favoriteRecipes.filter(recipe => recipe.idMeal !== mealId);
+
+        console.log('Updated favorite recipes:', favoriteRecipes); // Debugging step
+
+        // Confirm the recipe was removed
+        const removedRecipe = favoriteRecipes.find(recipe => recipe.idMeal === mealId);
+        if (removedRecipe) {
+            console.error(`Failed to remove meal ID: ${mealId}`);
+        } else {
+            console.log(`Successfully removed meal ID: ${mealId}`);
+        }
+
         localStorage.setItem(favoriteRecipesKey, JSON.stringify(favoriteRecipes));
         renderFavoriteRecipes(); // Re-render the favorite recipes list
     };
@@ -48,7 +72,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         for (const recipe of favoriteRecipes) {
-            const mealId = recipe.id || recipe.idMeal;
+            const mealId = recipe.idMeal;
 
             // Fetch meal details to get the image URL
             const mealDetailUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
@@ -73,11 +97,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
 
             const unfavoriteButton = document.createElement('button');
-            unfavoriteButton.classList = 'favorite-Button'
+            unfavoriteButton.classList.add('favorite-button'); // Ensure correct method to add class
             unfavoriteButton.textContent = "Unfavorite";
             unfavoriteButton.addEventListener('click', (event) => {
                 event.stopPropagation(); // Prevent the click event from propagating to the listItem
-                removeFavoriteRecipe(meal.idMeal);
+                console.log(`Unfavorite button clicked for meal ID: ${mealId}`); // Debugging step
+                removeFavoriteRecipe(mealId);
             });
 
             listItem.appendChild(mealName);
