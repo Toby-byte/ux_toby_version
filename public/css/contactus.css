@@ -71,7 +71,7 @@ img {
 .form legend {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: #333;
+    color: var(--bodyTextColor);
 }
 
 .form label {
@@ -101,7 +101,6 @@ img {
    cursor: pointer;
    display: inline;
    text-decoration: none;
-   color: black;
    background-color: var(--logoColor);
    padding: 0.5rem 1rem;
    border-radius: 0.25rem;
