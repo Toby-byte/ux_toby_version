@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // Create list item with image and name
             const listItem = document.createElement('li');
-            listItem.className = 'grid-item';
+            listItem.className = 'grid-item-favorite';
             listItem.style.backgroundImage = `url(${meal.strMealThumb})`;
             listItem.setAttribute('aria-label', meal.strMeal);
             listItem.alt = meal.strMeal;
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
 
             const unfavoriteButton = document.createElement('button');
-            unfavoriteButton.classList = 'favoriteButton'
+            unfavoriteButton.classList = 'favorite-Button'
             unfavoriteButton.textContent = "Unfavorite";
             unfavoriteButton.addEventListener('click', (event) => {
                 event.stopPropagation(); // Prevent the click event from propagating to the listItem
