@@ -141,7 +141,7 @@ transition: transform 500ms ease;
    cursor: pointer;
    display: inline;
    text-decoration: none;
-   color: var(--bgColor);
+   color: var(--cardsTextColor);
    background-color: var(--logoColor);
    padding: 0.5rem 1rem;
    border-radius: 0.25rem;
@@ -150,7 +150,8 @@ transition: transform 500ms ease;
 
 .card-btn:hover,
 .card-btn:focus{
-    color: var(--cardsTextColor);
+    color: var(--hoverTextColor);
+    background-color: var(--hoverBgColor);
 }
 
 @media (max-width: 768px) {

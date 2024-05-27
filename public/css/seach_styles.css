@@ -47,4 +47,5 @@ body {
 
 .FavoriteButton:hover {
     color: var(--hoverTextColor);
+    background-color: var(--hoverBgColor);
 }
