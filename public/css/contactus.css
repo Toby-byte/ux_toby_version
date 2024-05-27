@@ -111,7 +111,8 @@ img {
 }
 
 .form input[type="submit"]:hover {
-    color: var(--footerColor);
+    color: var(--hoverTextColor);
+    background-color: var(--hoverBgColor);
 }
 
 
