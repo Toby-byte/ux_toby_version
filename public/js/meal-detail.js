@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     const img = document.createElement('img');
                     img.src = strMealThumb;
-                    img.setAttribute('aria-label', 'Description of the image');
+                    img.setAttribute('aria-label', strMeal);
                     img_name_div.appendChild(img);
 
                     const mealName = document.createElement('h1');
