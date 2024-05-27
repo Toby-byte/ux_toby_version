@@ -3,6 +3,12 @@ function handleSearchEvent(event) {
     if (event.type === 'click' || (event.type === 'keydown' && event.key === 'Enter')) {
         const mealInput = document.getElementById('mealInput').value;
         console.log(mealInput);
+
+        if (mealInput === "") {
+            alert("Search field must not be empty");
+            return; // Exit the function early
+        }
+
         const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealInput}`;
 
         fetch(url)
