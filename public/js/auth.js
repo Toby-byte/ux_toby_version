@@ -63,8 +63,6 @@ if (signupForm) {
 }
 
 if (loginForm) {
-    
-
     loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
@@ -99,18 +97,27 @@ function checkLoggedIn() {
 
 // Protect restricted pages
 function protectPage() {
-    if (!checkLoggedIn()) {
-        alert('You must be logged in to access this page.');
-        window.location.href = 'login.html'; // Redirect to the login page
+    const currentPage = window.location.pathname.split('/').pop();
+
+    // Redirect to index.html if the user is not logged in and tries to access logout.html
+    if (currentPage === 'logout.html' && !checkLoggedIn()) {
+        window.location.href = 'index.html';
     }
 }
 
 // Check and protect the page on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
-    const restrictedPages = ['profile.html', 'logout.html'];
-    const currentPage = window.location.pathname.split('/').pop();
-    
-    if (restrictedPages.includes(currentPage)) {
-        protectPage();
-    }
+    protectPage();
 });
+
+// Handle logout
+const logoutButton = document.querySelector('#logout-button');
+if (logoutButton) {
+    logoutButton.addEventListener('click', () => {
+        // Remove loggedInUser from sessionStorage
+        sessionStorage.removeItem('loggedInUser');
+        
+        // Redirect to home page (index.html)
+        window.location.href = 'index.html';
+    });
+}
