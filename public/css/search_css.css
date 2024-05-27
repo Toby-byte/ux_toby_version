@@ -59,6 +59,22 @@ h2 {
     color: var(--bgColor);
 }
 
+#search_div {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#search_div button {
+    bottom: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    background-color: var(--logoColor);
+    color: var(--bgColor);
+    border: none;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 768px) {
     .grid-container {
         display: block; /* Turn off the grid for screens smaller than 600px */

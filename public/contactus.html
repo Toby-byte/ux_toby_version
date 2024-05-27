@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <title>About Us</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/search_css.css">
+    <link rel ="stylesheet" href="css/search_css.css">
     <link rel="stylesheet" href="css/contactus.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="js/api.js" defer></script>
@@ -65,18 +65,20 @@
                     <legend>Your Email</legend>
                     <div>
                         <label for="txtName">Name</label>
-                        <input type="text" id="txtName" name="name">
+                        <input type="text" id="txtName" name="formName" required>
                     </div>
                     <div>
                         <label for="txtEmail">E-mail address</label>
-                        <input type="email" id="txtEmail" name="email">
+                        <input type="email" id="txtEmail" name="formEmail" required>
                     </div>
                     <div>
-                        <label for="txtMessage">Your message</label>
-                        <textarea name="message" id="txtMessage"></textarea>
+                      <div>
+                         <label for="txtMessage">Your message</label>
+                      </div>  
+                        <textarea name="message" id="txtMessage" name="formMessage" required></textarea>
                     </div>
                     <div>
-                        <input type="submit" value="Submit request">
+                        <input type="submit" value="Send">
                     </div>
                 </fieldset>
             </form>
