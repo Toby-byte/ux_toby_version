@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const listItemButton = document.createElement('button');
             listItemButton.textContent = "Click here to see details";
             listItemButton.addEventListener('click', () => {
-                window.location.href = `meal-detail.html?id=${mealId}`;
+                window.location.href = `meal-detail.html?id=${mealId}&favorites=${encodeURIComponent(JSON.stringify(favoriteRecipes))}`;
             });
 
             const unfavoriteButton = document.createElement('button');
