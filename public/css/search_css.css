@@ -45,12 +45,14 @@
     padding: 5px 10px;
     background-color: var(--logoColor);
     color: var(--bgColor);
-    border: none;
+    border: solid 1px var(--bgColor);
     cursor: pointer;
 }
 
 .grid-item button:hover {
-    background-color: var(--hoverColor); 
+    background-color: var(--hoverBgColor); 
+    color: var(--hoverTextColor)
+    
 }
 
 h2 {
