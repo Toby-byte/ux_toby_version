@@ -103,15 +103,12 @@ function formatInstructions(instructions) {
     const nutritionFactsRegex = /Nutrition Facts.*/i;
     instructions = instructions.replace(nutritionFactsRegex, '').trim();
 
-    // Split the instructions on numbered steps or sentence boundaries
     const stepRegex = /\d+\.\s+/g;
     let steps = instructions.split(stepRegex);
 
     if (steps.length > 1) {
-        // If splitting by numbered steps worked, return the steps
         return steps.map(step => step.trim()).filter(step => step.length > 0);
     } else {
-        // Fallback to splitting by sentences
         return instructions.split(/(?<=[.!?])\s+/).map(sentence => sentence.trim()).filter(sentence => sentence.length > 0);
     }
 }

@@ -8,7 +8,6 @@ const requestOptions = {
     .then((result) => console.log(result))
     .catch((error) => console.error(error));
 
-
  function showSidebar(){
       const sidebar = document.querySelector('.sidebar')
       sidebar.style.display = 'flex'
@@ -17,9 +16,6 @@ const requestOptions = {
       const sidebar = document.querySelector('.sidebar')
       sidebar.style.display = 'none'
     }
-
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('#navbar');
@@ -134,5 +130,3 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileSignupListItem.appendChild(mobileSignupLink);
     }
 });
-
-
