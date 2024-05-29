@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         logoutSVG.alt = 'logout';
 
         logoutButton.innerHTML = logoutSVG;
+        logoutButton.textContent = 'Logout';
         navbar.appendChild(logoutListItem);
         logoutListItem.appendChild(logoutButton);
 
@@ -72,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         profileSVG.alt = "Profile";
 
         profileLink.innerHTML = profileSVG;
+        profileLink.textContent = 'Profile';
         navbar.appendChild(profileListItem);
         profileListItem.appendChild(profileLink);
 
@@ -98,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loginLink.setAttribute('tabindex', '7');
         loginLink.setAttribute('aria-label', "Login");
         loginLink.innerHTML = loginSVG;
+        loginLink.textContent = 'Login';
         loginListItem.appendChild(loginLink);
         navbar.appendChild(loginListItem);
 
@@ -122,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         signupLink.setAttribute('tabindex', '8');
         signupLink.setAttribute('aria-label', "Signup");
         signupLink.innerHTML = signupSVG;
+        signupLink.textContent = 'Signup';
         signupListItem.appendChild(signupLink);
         navbar.appendChild(signupListItem);
         
