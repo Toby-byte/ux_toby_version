@@ -6,7 +6,6 @@
 
 .grid-container {
     display: grid;
-    /* grid-template-columns: repeat(10, 1fr); */
     gap: 10px;
     list-style-type: none;
     padding: 50px;
@@ -14,20 +13,19 @@
 }
 
 .grid-item {
-    height: 200px; /* Example height */
+    height: 200px;
     background-size: cover;
     background-position: center;
-    position: relative; /* Ensure button positions correctly */
-    color: var(--bgColor); /* Text color for visibility */
+    position: relative;
+    color: var(--bgColor);
     border-radius: 20px;
 }
 
 .grid-item h2, .grid-item p, .grid-item button {
     position: absolute;
     z-index: 1;
-    /* margin: 0; */
     padding: 10px;
-    background: var(--shadowTheHedgehog); /* Semi-transparent background */
+    background: var(--shadowTheHedgehog);
     border-radius: 5px;
 }
 
@@ -44,15 +42,15 @@
 .grid-item button {
     bottom: 10px;
     left: 10px;
-    padding: 5px 10px; /* Button padding */
-    background-color: var(--logoColor); /* Background color */
-    color: var(--bgColor); /* Text color */
-    border: none; /* Remove default border */
-    cursor: pointer; /* Cursor change on hover */
+    padding: 5px 10px;
+    background-color: var(--logoColor);
+    color: var(--bgColor);
+    border: none;
+    cursor: pointer;
 }
 
 .grid-item button:hover {
-    background-color: var(--hoverColor); /* Change background color on hover */
+    background-color: var(--hoverColor); 
 }
 
 h2 {
@@ -77,7 +75,7 @@ h2 {
 
 @media only screen and (max-width: 768px) {
     .grid-container {
-        display: block; /* Turn off the grid for screens smaller than 600px */
+        display: block;
     }
 
     .grid-item {
