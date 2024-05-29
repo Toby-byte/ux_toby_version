@@ -8,7 +8,6 @@ const requestOptions = {
     .then((result) => console.log(result))
     .catch((error) => console.error(error));
 
-
  function showSidebar(){
       const sidebar = document.querySelector('.sidebar')
       sidebar.style.display = 'flex'
@@ -17,9 +16,6 @@ const requestOptions = {
       const sidebar = document.querySelector('.sidebar')
       sidebar.style.display = 'none'
     }
-
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('#navbar');
@@ -45,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Remove logged-in user's email from sessionStorage
             sessionStorage.removeItem('loggedInUser');
             // Redirect or do something else
-            window.location.href = "logout.html"; // Assuming logout.html contains your logout logic
+            window.location.href = "logout.html";
         });
 
         const mobileLogoutListItem = document.createElement('li');
@@ -59,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Remove logged-in user's email from sessionStorage
             sessionStorage.removeItem('loggedInUser');
             // Redirect or do something else
-            window.location.href = "logout.html"; // Assuming logout.html contains your logout logic
+            window.location.href = "logout.html";
         });
 
         const profileListItem = document.createElement('li');
@@ -134,5 +130,3 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileSignupListItem.appendChild(mobileSignupLink);
     }
 });
-
-
