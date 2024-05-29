@@ -24,10 +24,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     }
 
-    // Display user profile information including email
+    // Display user profile email
     profileInfo.innerHTML = `<p>Email: ${userProfile.email}</p>`;
 
-    // Retrieve favorite recipes from localStorage
+    // Gets favorite recipes from localStorage
     const favoriteRecipesKey = `user_${userProfile.email}_favorites`;
     let favoriteRecipes = JSON.parse(localStorage.getItem(favoriteRecipesKey)) || [];
 
@@ -39,18 +39,18 @@ document.addEventListener('DOMContentLoaded', async () => {
         return recipe;
     });
 
-    // Function to remove a recipe from the favorites list
+    //  remove a recipe from the favorites list
     const removeFavoriteRecipe = (mealId) => {
         console.log(`Removing meal ID: ${mealId}`); // Debugging step
 
-        // Additional debugging: log each recipe's ID
+        // debugging... 
         favoriteRecipes.forEach(recipe => console.log(`Existing recipe ID: ${recipe.idMeal}`));
 
         favoriteRecipes = favoriteRecipes.filter(recipe => recipe.idMeal !== mealId);
 
         console.log('Updated favorite recipes:', favoriteRecipes); // Debugging step
 
-        // Confirm the recipe was removed
+        //  even more debugging ...
         const removedRecipe = favoriteRecipes.find(recipe => recipe.idMeal === mealId);
         if (removedRecipe) {
             console.error(`Failed to remove meal ID: ${mealId}`);
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         renderFavoriteRecipes(); // Re-render the favorite recipes list
     };
 
-    // Function to render favorite recipes
+    // Render favorite recipes
     const renderFavoriteRecipes = async () => {
         favoriteRecipesList.innerHTML = ''; // Clear the list before rendering
 
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         for (const recipe of favoriteRecipes) {
             const mealId = recipe.idMeal;
 
-            // Fetch meal details to get the image URL
+            // Fetch meal details to get image from api
             const mealDetailUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
             const mealDetailResponse = await fetch(mealDetailUrl);
             const mealDetailData = await mealDetailResponse.json();
@@ -93,15 +93,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             const listItemButton = document.createElement('button');
             listItemButton.textContent = "Click here to see details";
             listItemButton.addEventListener('click', () => {
-                window.location.href = `meal-detail.html?id=${mealId}`;
+                window.location.href = `meal-detail.html?id=${mealId}&favorites=${encodeURIComponent(JSON.stringify(favoriteRecipes))}`;
             });
 
             const unfavoriteButton = document.createElement('button');
-            unfavoriteButton.classList.add('favorite-button'); // Ensure correct method to add class
+            unfavoriteButton.classList.add('favorite-button'); 
             unfavoriteButton.textContent = "Unfavorite";
             unfavoriteButton.addEventListener('click', (event) => {
-                event.stopPropagation(); // Prevent the click event from propagating to the listItem
-                console.log(`Unfavorite button clicked for meal ID: ${mealId}`); // Debugging step
+                event.stopPropagation(); // stops propagation
+                console.log(`Unfavorite button clicked for meal ID: ${mealId}`); // debugging...
                 removeFavoriteRecipe(mealId);
             });
 
@@ -112,6 +112,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     };
 
-    // Initial rendering of favorite recipes
+    
     renderFavoriteRecipes();
 });

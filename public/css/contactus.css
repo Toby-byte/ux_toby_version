@@ -1,5 +1,6 @@
 @import 'styles.css';
 
+
 img {
     width: 90%;
     aspect-ratio: 1/1;
@@ -102,6 +103,7 @@ img {
    display: inline;
    text-decoration: none;
    background-color: var(--logoColor);
+   color: var(--bgColor);
    padding: 0.5rem 1rem;
    border-radius: 0.25rem;
    max-width: max-content;
@@ -109,7 +111,8 @@ img {
 }
 
 .form input[type="submit"]:hover {
-    color: var(--footerColor);
+    color: var(--hoverTextColor);
+    background-color: var(--hoverBgColor);
 }
 
 
