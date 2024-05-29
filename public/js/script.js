@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Remove logged-in user's email from sessionStorage
             sessionStorage.removeItem('loggedInUser');
             // Redirect or do something else
-            window.location.href = "logout.html"; // Assuming logout.html contains your logout logic
+            window.location.href = "logout.html"; 
         });
 
         const mobileLogoutListItem = document.createElement('li');
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Remove logged-in user's email from sessionStorage
             sessionStorage.removeItem('loggedInUser');
             // Redirect or do something else
-            window.location.href = "logout.html"; // Assuming logout.html contains your logout logic
+            window.location.href = "logout.html"; 
         });
 
         const profileListItem = document.createElement('li');

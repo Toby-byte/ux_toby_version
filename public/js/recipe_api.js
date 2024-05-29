@@ -27,9 +27,9 @@ fetch(url)
             function createListItem(index, meal) {
                 const li = document.createElement('li');
                 li.className = 'grid-item'; // Use a general class for styling
-                li.style.gridColumn = gridColumns[(index - 1) % gridColumns.length]; // Set grid column dynamically
-                li.style.backgroundImage = `url(${meal.strMealThumb})`; // Set background image from API
-                li.setAttribute('aria-label', meal.strMeal); // Add aria-label for accessibility
+                li.style.gridColumn = gridColumns[(index - 1) % gridColumns.length]; // grid column
+                li.style.backgroundImage = `url(${meal.strMealThumb})`; // background image 
+                li.setAttribute('aria-label', meal.strMeal); // aria-label
                 
                 const h1 = document.createElement('h2');
                 h1.textContent = meal.strMeal;

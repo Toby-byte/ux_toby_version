@@ -2,7 +2,7 @@ const signupForm = document.querySelector('#signup-form');
 const loginForm = document.querySelector('#login-form');
 
 if (signupForm) {
-    // Code for signup form
+    // signup form
     const passwordError = document.querySelector('#password-error');
 
     signupForm.addEventListener('submit', async (e) => {
@@ -13,19 +13,19 @@ if (signupForm) {
         const password = formData.get('password');
         const confirmPassword = formData.get('confirm-password');
 
-        // Validate email format
+    
         if (!isValidEmail(email)) {
             alert('Please enter a valid email address.');
             return;
         }
 
-        // Validate password match
+        
         if (password !== confirmPassword) {
             passwordError.textContent = 'Passwords do not match.';
             return;
         }
 
-        // Validate password strength
+        
         if (!isValidPassword(password)) {
             passwordError.textContent = 'Password must be between 8 and 20 characters, and contain lowercase and uppercase letters, numbers, and special characters.';
             return;
@@ -43,7 +43,6 @@ if (signupForm) {
 
         if (response.ok) {
             alert('Signup successful!');
-            // Redirect or do something else
         } else {
             alert('Signup failed!');
         }
@@ -89,7 +88,7 @@ if (loginForm) {
     });
 }
 
-// Function to check if the user is logged in
+// Checks if user is logged in
 function checkLoggedIn() {
     const loggedInUser = sessionStorage.getItem('loggedInUser');
     return loggedInUser !== null;
@@ -110,14 +109,14 @@ document.addEventListener('DOMContentLoaded', () => {
     protectPage();
 });
 
-// Handle logout
+//  Logout function
 const logoutButton = document.querySelector('#logout-button');
 if (logoutButton) {
     logoutButton.addEventListener('click', () => {
-        // Remove loggedInUser from sessionStorage
+        // Remove user from sessionStorage
         sessionStorage.removeItem('loggedInUser');
         
-        // Redirect to home page (index.html)
+        // Redirect to home page 
         window.location.href = 'index.html';
     });
 }

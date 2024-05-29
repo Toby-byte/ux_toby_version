@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const params = new URLSearchParams(window.location.search);
-    const mealId = params.get('id'); // Get the meal ID from URL query parameters
+    const mealId = params.get('id'); // Get the meal ID
 
     if (mealId) {
         const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     mealDetail.appendChild(img_name_div);
 
-                    // Create and append the Instructions section
+                    // Creates the Instructions section
                     const instructionsDiv = document.createElement('div');
 
                     const instructionsHeading = document.createElement('h1');
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     instructionsDiv.appendChild(ol);
 
-                    // Create and append the Ingredients section
+                    // Creates the Ingredients section
                     const ingredientsDiv = document.createElement('div');
 
                     const ingredientsHeading = document.createElement('h1');
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function formatInstructions(instructions) {
-    // Remove nutrition facts if present
+    // Remove nutrition facts from recipe instructions if present
     const nutritionFactsRegex = /Nutrition Facts.*/i;
     instructions = instructions.replace(nutritionFactsRegex, '').trim();
 
