@@ -1,5 +1,5 @@
 
-/* General styles for the sections */
+/* start of general styles for the sections */
 .wel-header, .rtw-header {
     display: flex;
     justify-content: center;
@@ -31,7 +31,9 @@
     font-weight: 400;
     color: var(--bodyTextColor);
 }
-/* Container for the sections */
+/* end of general styles for the sections */
+
+/* start of end container for the sections */
 .main {
     display: flex;
     flex-direction: column;
@@ -82,6 +84,9 @@
 
 }
 
+/* end of end container for the sections */
+
+/* start of @mediea */
 
 @media (min-width: 768px) {
     .main-content {
@@ -117,3 +122,5 @@
         font-size: 1.4rem;
     }
 }
+
+/* end of @mediea */
