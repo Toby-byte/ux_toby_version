@@ -96,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loginLink.setAttribute('tabindex', '7');
         loginLink.setAttribute('aria-label', "Login");
         loginLink.innerHTML = loginSVG;
+        // this is where we changed an icon into text
         loginLink.textContent = 'Login';
         loginListItem.appendChild(loginLink);
         navbar.appendChild(loginListItem);

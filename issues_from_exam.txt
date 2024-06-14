@@ -1,0 +1,26 @@
+1. The recipes are not random, as requested, but hardcoded
+
+2. The categories are hardcoded instead of read from the API (recipe_site.html, lines 43-58)
+
+3. Lack of wayfinding mechanisms (CTAs, breadcrumbs)
+
+4. Sitemap: no differentiation between main navigation, utility navigation and footer navigation 
+
+5. Inline JavaScript (e.g, index.html, line 33), thus breaking the separation of concerns pattern 
+(in other words, don't use onclick in HTML elements bc. of separation of concerns pattern)
+
+6. Accessibility: "title" attributes missing in <a>
+
+7. Inconsistent code indentation
+
+8. Missing character entities (e.g., the "ø" in aboutus.html, lines 92 and 118)
+
+9. Redundant font load in _variables.css
+
+10. CSS: hardcoded colours (cards.css, lines 82, 83 and 84) and hardcoded fonts (search_styles.css, line 24) instead of custom properties
+
+11. The homepage images are too big and with no alternate sizes
+
+12. Unnecessary use of DOMContentLoaded, as the JavaScript files are loaded with defer 
+
+13. JavaScript: Some URLs are hardcoded instead of declared as variables with const

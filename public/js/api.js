@@ -38,7 +38,9 @@ function handleSearchEvent(event) {
                 function createListItem(index, meal) {
                     const li = document.createElement('li');
                     li.className = 'grid-item';
+                    // i have no idea why i added a -1 one here? it is not needed
                     li.style.gridColumn = gridColumns[(index - 1) % gridColumns.length]; // Set grid column dynamically for search design
+                    li.setAttribute('grid-column', gridColumns[(index -1) % gridColumns.length]);
                     li.style.backgroundImage = `url(${meal.strMealThumb})`; // Set background image from mealDB API
                     li.setAttribute('aria-label', meal.strMeal); // Add aria-label for accessibility with name of meal
                     
@@ -60,6 +62,7 @@ function handleSearchEvent(event) {
 
                 // Create and append list items
                 mealArray.forEach((meal, index) => {
+                    // same story for this, no need for + 1
                     const li = createListItem(index + 1, meal);
                     ul.appendChild(li);
                 });
