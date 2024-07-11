@@ -1,27 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Calistoga&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Calistoga&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Calistoga&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Calistoga&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Calistoga&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-    --bgColor: #fbf8f3; /* Background color */
-    --logoColor: #DC143C; /* Logo color */
-    --hoverTextColor:#000000; /* Hover text color */
-    --hoverBgColor: #ffffff; /* Hover background color */
-    --footerColor: #eee2cd; /* Footer color */
-    --bodyTextColor: #000000; /* Body text color */
-    --searchTextBg: #333;   /* Search text background color */
-    --cardsTextColor: #ffffff; /* Cards text color */
-    --loginBgColor: #ffffff; /* Login background color */
+  --bgColor: #fbf8f3; /* Background color */
+  --logoColor: #dc143c; /* Logo color */
+  --hoverTextColor: #000000; /* Hover text color */
+  --hoverBgColor: #ffffff; /* Hover background color */
+  --footerColor: #eee2cd; /* Footer color */
+  --bodyTextColor: #000000; /* Body text color */
+  --searchTextBg: #333; /* Search text background color */
+  --cardsTextColor: #ffffff; /* Cards text color */
+  --loginBgColor: #ffffff; /* Login background color */
 
-    --TitleFont: 'Calistoga', cursive;
-    --SubtitleFont: 'Caladea', serif;
-    --BodyFont: 'Poppins', sans-serif;
+  --TitleFont: "Calistoga", cursive;
+  --SubtitleFont: "Caladea", serif;
+  --BodyFont: "Poppins", sans-serif;
 
-    --shadowTheHedgehog: rgba(0, 0, 0, 0.5);
+  --shadowTheHedgehog: rgba(0, 0, 0, 0.5);
 
-    /* card gradient colors */
+  /* card gradient colors */
 
-    --cardGradient1: hsl(0 0% 0% / 0);
-    --cardGradient2: hsl(20 0% 0% / 0.3) 20%;
-    --cardGradient3: hsl(0 0% 0% / 1);
-}   
+  --cardGradient1: hsl(0 0% 0% / 0);
+  --cardGradient2: hsl(20 0% 0% / 0.3) 20%;
+  --cardGradient3: hsl(0 0% 0% / 1);
+}

@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="css/contactus.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <title>About Us</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel ="stylesheet" href="css/search_css.css">
-    <link rel="stylesheet" href="css/contactus.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <script src="js/api.js" defer></script>
-    <script src="js/script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="css/contactus.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <title>About Us</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/search_css.css">
+  <link rel="stylesheet" href="css/contactus.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <script src="js/api.js" defer></script>
+  <script src="js/script.js" defer></script>
 </head>
+
 <body>
-    <header>
-    <a href="index.html" class="logo" title="EAT SOME FOOD"><h1>EAT SOME FOOD</h1></a>
+  <header>
+    <a href="index.html" class="logo" title="EAT SOME FOOD">
+      <h1>EAT SOME FOOD</h1>
+    </a>
   </header>
   <nav>
     <ul class="sidebar">
-      <li onclick=hideSidebar()><a href="#" title="sidebar-close"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+      <li onclick=hideSidebar()><a href="#" title="sidebar-close"><svg xmlns="http://www.w3.org/2000/svg" height="26"
+            viewBox="0 96 960 960" width="26">
+            <path
+              d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
+          </svg></a></li>
       <li><a href="index.html" title="Home page" aria-label="Home">Home</a></li>
       <li><a href="recipe_site.html" title="Recipes page" aria-label="Recipes">Recipes</a></li>
       <li><a href="contactus.html" title="Contact us page" aria-label="Contact Us">Contact Us</a></li>
@@ -33,68 +43,77 @@
       <li><a href="contactus.html" title="About Us page" tabindex="4" aria-label="Contact Us">Contact</a></li>
     </ul>
     <ul id="navbar">
-      <li class="menu-button" onclick=showSidebar()><a href="#" title="sidebar-open"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+      <li class="menu-button" onclick=showSidebar()><a href="#" title="sidebar-open"><svg
+            xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
+          </svg></a></li>
       <li id="search-container">
-      <input type="text" id="mealInput" placeholder="Enter meal name" tabindex="5">
-        <button id="searchButton" tabindex="6" aria-label="Search Button"><svg class="icon" alt="Search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></button>
+        <input type="text" id="mealInput" placeholder="Enter meal name" tabindex="5">
+        <button id="searchButton" tabindex="6" aria-label="Search Button"><svg class="icon" alt="Search"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+          </svg></button>
       </li>
     </ul>
   </nav>
   <div id="meals">
     <div id="mealDisplay"></div>
-</div>
-    <main>
-        <section class="about">
-            <h2 class="title">
-                Having trouble? We're here for you!
-            </h2>
-            <img src="images/food2.jpg" alt="KitchenImage">
-            <p class="description1">
-                <span>We believe that everyone should be comfortable in their own kitchen.</span>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            </p>
-            <h3 class="heading">
-                Contact us here!
-            </h3>
-            <img src="images/kitchen2.jpg" alt="FoodImage">
-            <form class="form" action="#" method="POST">
-                <fieldset>
-                    <legend>Your Email</legend>
-                    <div>
-                        <label for="txtName">Name</label>
-                        <input type="text" id="txtName" name="formName" required>
-                    </div>
-                    <div>
-                        <label for="txtEmail">E-mail address</label>
-                        <input type="email" id="txtEmail" name="formEmail" required>
-                    </div>
-                    <div>
-                      <div>
-                         <label for="txtMessage">Your message</label>
-                      </div>  
-                        <textarea id="txtMessage" name="formMessage" required></textarea>
-                    </div>
-                    <div>
-                        <input type="submit" value="Send">
-                    </div>
-                </fieldset>
-            </form>
-        </section>
-    </main>
-    <footer>
-  	 <div class="container">
-  	 	<div class="row">
-  	 		<div class="footer-col">
-  	 			<h4>company</h4>
-  	 			<ul>
-  	 				<li><a href="aboutus.html" title="about us">about us</a></li>
-  	 				<li><a href="#" title="privacy policy">privacy policy</a></li>
-  	 			</ul>
-  	 		</div>
-         <div class="footer-col">
+  </div>
+  <main>
+    <section class="about">
+      <h2 class="title">
+        Having trouble? We're here for you!
+      </h2>
+      <img src="images/food2.jpg" alt="KitchenImage">
+      <p class="description1">
+        <span>We believe that everyone should be comfortable in their own kitchen.</span>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
+        unchanged.
+      </p>
+      <h3 class="heading">
+        Contact us here!
+      </h3>
+      <img src="images/kitchen2.jpg" alt="FoodImage">
+      <form class="form" action="#" method="POST">
+        <fieldset>
+          <legend>Your Email</legend>
+          <div>
+            <label for="txtName">Name</label>
+            <input type="text" id="txtName" name="formName" required>
+          </div>
+          <div>
+            <label for="txtEmail">E-mail address</label>
+            <input type="email" id="txtEmail" name="formEmail" required>
+          </div>
+          <div>
+            <div>
+              <label for="txtMessage">Your message</label>
+            </div>
+            <textarea id="txtMessage" name="formMessage" required></textarea>
+          </div>
+          <div>
+            <input type="submit" value="Send">
+          </div>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>company</h4>
+          <ul>
+            <li><a href="aboutus.html" title="about us">about us</a></li>
+            <li><a href="#" title="privacy policy">privacy policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
           <h4>follow us</h4>
           <div class="social-links">
             <a href="#" aria-label="facebook" title="facebook"><i class="fab fa-facebook-f"></i></a>
@@ -103,14 +122,15 @@
             <a href="#" aria-label="linkedin" title="linkedin"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
-  	 		<div class="footer-col">
-  	 			<h4>get help</h4>
-  	 			<ul>
-  	 				<li><a href="contactus.html" title="FAQ">FAQ</a></li>
-  	 			</ul>
-  	 		</div>
-  	 	</div>
-  	 </div>
+        <div class="footer-col">
+          <h4>get help</h4>
+          <ul>
+            <li><a href="contactus.html" title="FAQ">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
+
 </html>

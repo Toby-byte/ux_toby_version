@@ -1,86 +1,87 @@
-@import '_variables.css';
+@import "_variables.css";
 
 .favoriteButton {
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
 .grid-container {
-    display: grid;
-    gap: 10px;
-    list-style-type: none;
-    padding: 50px;
-    margin: 0;
+  display: grid;
+  gap: 10px;
+  list-style-type: none;
+  padding: 50px;
+  margin: 0;
 }
 
 .grid-item {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    color: var(--bgColor);
-    border-radius: 20px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: var(--bgColor);
+  border-radius: 20px;
 }
 
-.grid-item h2, .grid-item p, .grid-item button {
-    position: absolute;
-    z-index: 1;
-    padding: 10px;
-    background: var(--shadowTheHedgehog);
-    border-radius: 5px;
+.grid-item h2,
+.grid-item p,
+.grid-item button {
+  position: absolute;
+  z-index: 1;
+  padding: 10px;
+  background: var(--shadowTheHedgehog);
+  border-radius: 5px;
 }
 
 .grid-item h2 {
-    top: 10px;
-    left: 10px;
+  top: 10px;
+  left: 10px;
 }
 
 .grid-item p {
-    top: 40px;
-    left: 10px;
+  top: 40px;
+  left: 10px;
 }
 
 .grid-item button {
-    bottom: 10px;
-    left: 10px;
-    padding: 5px 10px;
-    background-color: var(--logoColor);
-    color: var(--bgColor);
-    border: solid 1px var(--bgColor);
-    cursor: pointer;
+  bottom: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  background-color: var(--logoColor);
+  color: var(--bgColor);
+  border: solid 1px var(--bgColor);
+  cursor: pointer;
 }
 
 .grid-item button:hover {
-    background-color: var(--hoverBgColor); 
-    color: var(--hoverTextColor)
-    
+  background-color: var(--hoverBgColor);
+  color: var(--hoverTextColor);
 }
 
 h2 {
-    color: var(--bgColor);
+  color: var(--bgColor);
 }
 
 #search_div {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
 #search_div button {
-    bottom: 10px;
-    left: 10px;
-    padding: 5px 10px;
-    background-color: var(--logoColor);
-    color: var(--bgColor);
-    border: none;
-    cursor: pointer;
+  bottom: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  background-color: var(--logoColor);
+  color: var(--bgColor);
+  border: none;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {
-    .grid-container {
-        display: block;
-    }
+  .grid-container {
+    display: block;
+  }
 
-    .grid-item {
-        margin-bottom: 20px;
-    }
+  .grid-item {
+    margin-bottom: 20px;
+  }
 }

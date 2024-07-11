@@ -1,207 +1,204 @@
-@import '_variables.css';
+@import "_variables.css";
 
 .card-header {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    font-size: 2rem;
-    color: var(--logoColor);
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  font-size: 2rem;
+  color: var(--logoColor);
 }
 
 .cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    margin: 1rem 1rem 5rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin: 1rem 1rem 5rem 1rem;
 }
 
 .card1 {
-    color: var(--cardsTextColor);
-    padding: 5rem 0 0;
-    max-width: 35rem;
-    border-radius: 0.5rem; 
-    overflow: hidden;
-    background-image: url('https://www.themealdb.com/images/media/meals/ctg8jd1585563097.jpg');
-    background-size: cover;
-    box-shadow: 0 0.5rem 1rem var(--shadowTheHedgehog);
-    transition: transform 500ms ease;
+  color: var(--cardsTextColor);
+  padding: 5rem 0 0;
+  max-width: 35rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-image: url("https://www.themealdb.com/images/media/meals/ctg8jd1585563097.jpg");
+  background-size: cover;
+  box-shadow: 0 0.5rem 1rem var(--shadowTheHedgehog);
+  transition: transform 500ms ease;
 }
 
 .card2 {
-    color: var(--cardsTextColor);
-    padding: 5rem 0 0;
-    max-width: 35rem;
-    border-radius: 0.5rem; 
-    overflow: hidden;
-    background-image: url('https://www.themealdb.com/images/media/meals/58oia61564916529.jpg');
-    background-size: cover;
-    box-shadow: 0 0.5rem 1rem var(--shadowTheHedgehog);
-    transition: transform 500ms ease;
+  color: var(--cardsTextColor);
+  padding: 5rem 0 0;
+  max-width: 35rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-image: url("https://www.themealdb.com/images/media/meals/58oia61564916529.jpg");
+  background-size: cover;
+  box-shadow: 0 0.5rem 1rem var(--shadowTheHedgehog);
+  transition: transform 500ms ease;
 }
 
 .card3 {
-    color: var(--cardsTextColor);
-    padding: 5rem 0 0;
-    max-width: 35rem;
-    border-radius: 0.5rem; 
-    overflow: hidden;
-    background-image: url('https://www.themealdb.com/images/media/meals/mlchx21564916997.jpg');
-    background-size: cover;
-    box-shadow: 0 0.5rem 1rem var(--shadowTheHedgehog);
-    transition: transform 500ms ease;
+  color: var(--cardsTextColor);
+  padding: 5rem 0 0;
+  max-width: 35rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-image: url("https://www.themealdb.com/images/media/meals/mlchx21564916997.jpg");
+  background-size: cover;
+  box-shadow: 0 0.5rem 1rem var(--shadowTheHedgehog);
+  transition: transform 500ms ease;
 }
 
 .card4 {
-    color: var(--cardsTextColor);
-    padding: 5rem 0 0;
-    max-width: 35rem;
-    border-radius: 0.5rem; 
-    overflow: hidden;
-    background-image: url('https://www.themealdb.com/images/media/meals/uuyrrx1487327597.jpg');
-    background-size: cover;
-    box-shadow: 0 0.5rem 1rem var(--shadowTheHedgehog);
-    transition: transform 500ms ease;
+  color: var(--cardsTextColor);
+  padding: 5rem 0 0;
+  max-width: 35rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-image: url("https://www.themealdb.com/images/media/meals/uuyrrx1487327597.jpg");
+  background-size: cover;
+  box-shadow: 0 0.5rem 1rem var(--shadowTheHedgehog);
+  transition: transform 500ms ease;
 }
 
-
-
-
 .card1:hover,
-.card2:hover, 
-.card3:hover, 
+.card2:hover,
+.card3:hover,
 .card4:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .card-content {
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem;
-    gap: 1rem;
-    background: linear-gradient(
-        var(--cardGradient1),
-        var(--cardGradient2),
-        var(--cardGradient3)
-    );
-    transform: translateY(60%);
-    transition: transform 500ms ease;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1rem;
+  background: linear-gradient(
+    var(--cardGradient1),
+    var(--cardGradient2),
+    var(--cardGradient3)
+  );
+  transform: translateY(60%);
+  transition: transform 500ms ease;
 }
 
 .card-content > *:not(.card-title) {
-    opacity: 0;
-    transition: opacity 500ms linear;
+  opacity: 0;
+  transition: opacity 500ms linear;
 }
 
 .card1:hover .card-content,
-.card2:hover .card-content, 
-.card3:hover .card-content, 
+.card2:hover .card-content,
+.card3:hover .card-content,
 .card4:hover .card-content {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
-.card1:hover .card-content > *, 
-.card2:hover .card-content > *, 
+.card1:hover .card-content > *,
+.card2:hover .card-content > *,
 .card3:hover .card-content > *,
 .card4:hover .card-content > * {
-    opacity: 1;
-    transition-delay: 300ms;
+  opacity: 1;
+  transition-delay: 300ms;
 }
 
 .card-title {
-    position: relative;
-    margin-bottom: 0.5rem;
-    color: var(--cardsTextColor);
+  position: relative;
+  margin-bottom: 0.5rem;
+  color: var(--cardsTextColor);
 }
 
 .card-title::after {
-content: "";
-position: absolute;
-height: 4px;
-left: -1.5rem;
-bottom: -0.5rem;
-width: 100%;
-background: var(--logoColor);
-transform: scaleX(0);
-transform-origin: left;
-transition: transform 500ms ease;
+  content: "";
+  position: absolute;
+  height: 4px;
+  left: -1.5rem;
+  bottom: -0.5rem;
+  width: 100%;
+  background: var(--logoColor);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 500ms ease;
 }
 
-.card1:hover .card-title::after, 
-.card2:hover .card-title::after, 
-.card3:hover .card-title::after, 
+.card1:hover .card-title::after,
+.card2:hover .card-title::after,
+.card3:hover .card-title::after,
 .card4:hover .card-title::after {
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .card-body {
-    color: var(--cardsTextColor);
+  color: var(--cardsTextColor);
 }
 
 .card-btn {
-   cursor: pointer;
-   display: inline;
-   text-decoration: none;
-   color: var(--cardsTextColor);
-   background-color: var(--logoColor);
-   padding: 0.5rem 1rem;
-   border-radius: 0.25rem;
-   max-width: max-content;
+  cursor: pointer;
+  display: inline;
+  text-decoration: none;
+  color: var(--cardsTextColor);
+  background-color: var(--logoColor);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  max-width: max-content;
 }
 
 .card-btn:hover,
-.card-btn:focus{
-    color: var(--hoverTextColor);
-    background-color: var(--hoverBgColor);
+.card-btn:focus {
+  color: var(--hoverTextColor);
+  background-color: var(--hoverBgColor);
 }
 
 @media (max-width: 768px) {
-    .cards {
-        grid-template-columns: repeat(1, 1fr); 
-        justify-items: center;
-    }
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
 
-    .card1,
-    .card2, 
-    .card3,
-    .card4 {
-        padding: 4rem 0 0;
-    }
+  .card1,
+  .card2,
+  .card3,
+  .card4 {
+    padding: 4rem 0 0;
+  }
 
-    .card-content {
-         transform: translateY(0);
-    }
+  .card-content {
+    transform: translateY(0);
+  }
 
-    .card-content > *:not(.card-title) {
-        opacity: 1;
-    }
+  .card-content > *:not(.card-title) {
+    opacity: 1;
+  }
 
-    .card-title {
+  .card-title {
     margin-bottom: 0rem;
-}
+  }
 }
 
 @media (max-width: 450px) {
-    .cards {
-        grid-template-columns: repeat(1, 1fr); 
-        justify-items: center;
-    }
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
 
-    .card1,
-    .card2, 
-    .card3, 
-    .card4 {
-        padding: 3rem 0 0;
-    }
+  .card1,
+  .card2,
+  .card3,
+  .card4 {
+    padding: 3rem 0 0;
+  }
 
-    .card-content {
-         transform: translateY(0);
-    }
+  .card-content {
+    transform: translateY(0);
+  }
 
-    .card-content > *:not(.card-title) {
-        opacity: 1;
-    }
+  .card-content > *:not(.card-title) {
+    opacity: 1;
+  }
 
-    .card-title {
+  .card-title {
     margin-bottom: 0rem;
-}
+  }
 }

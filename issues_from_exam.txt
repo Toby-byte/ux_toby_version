@@ -11,7 +11,7 @@
 
 6. Accessibility: "title" attributes missing in <a> (Done)
 
-7. Inconsistent code indentation
+7. Inconsistent code indentation (Done)
 
 8. Missing character entities (e.g., the "ø" in aboutus.html, lines 92 and 118) (Done)
 
@@ -23,6 +23,6 @@
 
 12. Unnecessary use of DOMContentLoaded, as the JavaScript files are loaded with defer (Done)
 
-13. JavaScript: Some URLs are hardcoded instead of declared as variables with const
+13. JavaScript: Some URLs are hardcoded instead of declared as variables with const (Done)
 
-                                ------------------  4 of 13 done  ------------------
+                                ------------------  6 of 13 done  ------------------

@@ -1,105 +1,106 @@
-@import '_variables.css';
-@import 'styles.css';
+@import "_variables.css";
+@import "styles.css";
 
 img {
-    width: 100%;
-    aspect-ratio: 2/1;
-    object-fit: cover;
-    border-radius: 0.5rem;
+  width: 100%;
+  aspect-ratio: 2/1;
+  object-fit: cover;
+  border-radius: 0.5rem;
 }
 
-h2, h3 {
-    margin-bottom: 0.5rem;
-    color: var(--logoColor);
+h2,
+h3 {
+  margin-bottom: 0.5rem;
+  color: var(--logoColor);
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
 }
 
 #login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .login-container {
-    width: 25rem;
-    background-color: var(--loginBgColor);
-    border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem var(--shadowTheHedgehog);
+  width: 25rem;
+  background-color: var(--loginBgColor);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem var(--shadowTheHedgehog);
 }
 
 .login-wrapper {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .signup-container {
-    width: 25rem;
-    background-color: var(--loginBgColor);
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem var(--shadowTheHedgehog);
+  width: 25rem;
+  background-color: var(--loginBgColor);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem var(--shadowTheHedgehog);
 }
 
 .signup-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.login-field{
-    width: 100%;
-    margin-bottom: 1rem;
-    display: grid;
+.login-field {
+  width: 100%;
+  margin-bottom: 1rem;
+  display: grid;
 }
 
 .login-input {
-    padding: 0.5rem;
-    border: 1px solid;
-    border-radius: 0.25rem;
+  padding: 0.5rem;
+  border: 1px solid;
+  border-radius: 0.25rem;
 }
 
 .login-label {
-    justify-self: left;
+  justify-self: left;
 }
 
 .login-button {
-    width: 100%;
-    padding: 0.5rem;
-    margin: 1rem 0;
-    height: 3rem;
-    border: none;
-    border-radius: 0.25rem;
-    background-color: var(--logoColor);
-    color: var(--cardsTextColor);
-    cursor: pointer;
-    font-size: 1.5rem;
-    text-decoration: none;
-    text-align: center;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  height: 3rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: var(--logoColor);
+  color: var(--cardsTextColor);
+  cursor: pointer;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-align: center;
 }
 
-.login-button:hover{
-    font-size: 1.7rem;
+.login-button:hover {
+  font-size: 1.7rem;
 }
 
 .center {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 1rem 0;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 1rem 0;
+  gap: 1rem;
 }
 
 .signup-benefits {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem 0;
 }
