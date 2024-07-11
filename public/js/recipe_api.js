@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=`;
+const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=`;
+
 fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -63,7 +63,6 @@ fetch(url)
             console.error('Error fetching data: ', error);
             document.getElementById('mealDisplay').textContent = 'Failed to fetch meal data.';
         });
-});
 
 function toggleFavorite(meal, button) {
     const loggedInUserEmail = sessionStorage.getItem('loggedInUser');

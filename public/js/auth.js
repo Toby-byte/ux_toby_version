@@ -104,10 +104,8 @@ function protectPage() {
     }
 }
 
-// Check and protect the page on DOMContentLoaded
-document.addEventListener('DOMContentLoaded', () => {
-    protectPage();
-});
+protectPage();
+
 
 //  Logout function
 const logoutButton = document.querySelector('#logout-button');
