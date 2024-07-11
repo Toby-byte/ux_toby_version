@@ -15,7 +15,7 @@
 
 8. Missing character entities (e.g., the "ø" in aboutus.html, lines 92 and 118) (Done)
 
-9. Redundant font load in _variables.css
+9. Redundant font load in _variables.css (Done)
 
 10. CSS: hardcoded colours (cards.css, lines 82, 83 and 84) and hardcoded fonts (search_styles.css, line 24) instead of custom properties (Done)
 
@@ -25,4 +25,4 @@
 
 13. JavaScript: Some URLs are hardcoded instead of declared as variables with const (Done)
 
-                                ------------------  6 of 13 done  ------------------
+                                ------------------  7 of 13 done  ------------------
