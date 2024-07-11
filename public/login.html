@@ -11,11 +11,11 @@
 </head>
 <body>
      <header>
-    <a href="index.html" class="logo"><h1>EAT SOME FOOD</h1></a>
+    <a href="index.html" class="logo" title="EAT SOME FOOD"><h1>EAT SOME FOOD</h1></a>
   </header>
   <nav>
     <ul class="sidebar">
-      <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+      <li onclick=hideSidebar()><a href="#" title="sidebar-close"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
       <li><a href="index.html" title="Home page" aria-label="Home">Home</a></li>
       <li><a href="recipe_site.html" title="Recipes page" aria-label="Recipes">Recipes</a></li>
       <li><a href="contactus.html" title="Contact us page" aria-label="Contact Us">Contact Us</a></li>
@@ -28,7 +28,7 @@
       <li><a href="contactus.html" title="About Us page" tabindex="4" aria-label="Contact Us">Contact</a></li>
     </ul>
     <ul id="navbar">
-      <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+      <li class="menu-button" onclick=showSidebar()><a href="#" title="sidebar-open"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
       <li id="search-container">
       <input type="text" id="mealInput" placeholder="Enter meal name" tabindex="5">
         <button id="searchButton" tabindex="6" aria-label="Search Button"><svg class="icon" alt="Search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></button>
@@ -45,7 +45,7 @@
                         <p>Explore the culinary world!</p>
                         <div>
                             <p>Don't have an account yet? don't worry</p>
-                            <a href="signup.html">Create an account here</a>
+                            <a href="signup.html" title="Create an account here">Create an account here</a>
                         </div>
                     </div>
                     <form id="login-form">
@@ -56,7 +56,7 @@
                         <div class="login-field">
                             <label class="login-label" for="password">Password:</label>
                             <input class="login-input" type="password" id="password" name="password" required>
-                            <a href="#">forgot your password?</a>
+                            <a href="#" title="forgot your password?">forgot your password?</a>
                         </div>
                         <input class="login-button" type="submit" value="Sign in">
                     </form>
@@ -68,7 +68,7 @@
             <div class="signup-container">
                 <div class="signup-wrapper">
                     <h3>Don't have an account?</h3>
-                    <a class="login-button" href="signup.html">Create an Account</a>
+                    <a class="login-button" href="signup.html" title="Create an Account">Create an Account</a>
                     <p class="center">Here are the benefits to creating an account</p>
                     <ul class="signup-benefits">
                         <li>&#10003; It is free to create an account!</li>
@@ -87,23 +87,23 @@
   	 		<div class="footer-col">
   	 			<h4>company</h4>
   	 			<ul>
-  	 				<li><a href="aboutus.html">about us</a></li>
-  	 				<li><a href="#">privacy policy</a></li>
+  	 				<li><a href="aboutus.html" title="about us">about us</a></li>
+  	 				<li><a href="#" title="privacy policy">privacy policy</a></li>
   	 			</ul>
   	 		</div>
          <div class="footer-col">
           <h4>follow us</h4>
           <div class="social-links">
-            <a href="#" aria-label="facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="linkedin"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="facebook" title="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="twitter" title="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="instagram" title="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="linkedin" title="linkedin"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
   	 		<div class="footer-col">
   	 			<h4>get help</h4>
   	 			<ul>
-  	 				<li><a href="contactus.html">FAQ</a></li>
+  	 				<li><a href="contactus.html" title="FAQ">FAQ</a></li>
   	 			</ul>
   	 		</div>
   	 	</div>
