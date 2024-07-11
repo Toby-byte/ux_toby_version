@@ -79,9 +79,9 @@
     padding: 1.5rem;
     gap: 1rem;
     background: linear-gradient(
-        hsl(0 0% 0% / 0),
-        hsl(20 0% 0% / 0.3) 20%,
-        hsl(0 0% 0% / 1)
+        var(--cardGradient1),
+        var(--cardGradient2),
+        var(--cardGradient3)
     );
     transform: translateY(60%);
     transition: transform 500ms ease;

@@ -17,7 +17,7 @@
 
 9. Redundant font load in _variables.css
 
-10. CSS: hardcoded colours (cards.css, lines 82, 83 and 84) and hardcoded fonts (search_styles.css, line 24) instead of custom properties
+10. CSS: hardcoded colours (cards.css, lines 82, 83 and 84) and hardcoded fonts (search_styles.css, line 24) instead of custom properties (Done)
 
 11. The homepage images are too big and with no alternate sizes
 

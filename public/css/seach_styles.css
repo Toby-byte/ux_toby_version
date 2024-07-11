@@ -21,7 +21,6 @@ img {
 }
 
 body {
-    font-family: Arial, sans-serif;
     background-color: var(--bgColor);
     color: var(--searchTextBg);
     margin: 1rem;

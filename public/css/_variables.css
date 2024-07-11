@@ -18,4 +18,10 @@
     --BodyFont: 'Poppins', sans-serif;
 
     --shadowTheHedgehog: rgba(0, 0, 0, 0.5);
+
+    /* card gradient colors */
+
+    --cardGradient1: hsl(0 0% 0% / 0);
+    --cardGradient2: hsl(20 0% 0% / 0.3) 20%;
+    --cardGradient3: hsl(0 0% 0% / 1);
 }   
