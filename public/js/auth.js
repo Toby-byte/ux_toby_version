@@ -1,5 +1,6 @@
 const signupForm = document.querySelector('#signup-form');
 const loginForm = document.querySelector('#login-form');
+const users_url = 'http://localhost:3000/users'
 
 if (signupForm) {
     // signup form
@@ -33,7 +34,7 @@ if (signupForm) {
 
         passwordError.textContent = '';
 
-        const response = await fetch('http://localhost:3000/users', {
+        const response = await fetch(users_url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -69,7 +70,7 @@ if (loginForm) {
         const email = formData.get('email');
         const password = formData.get('password');
 
-        const response = await fetch('http://localhost:3000/users');
+        const response = await fetch(users_url);
         const users = await response.json();
 
         const user = users.find(user => user.email === email && user.password === password);

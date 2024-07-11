@@ -24,3 +24,5 @@
 12. Unnecessary use of DOMContentLoaded, as the JavaScript files are loaded with defer (Done)
 
 13. JavaScript: Some URLs are hardcoded instead of declared as variables with const
+
+                                ------------------  4 of 13 done  ------------------

@@ -14,7 +14,9 @@ if (!loggedInUserEmail) {
     return;
 }
 
-const usersResponse = await fetch('http://localhost:3000/users');
+const users_url = 'http://localhost:3000/users'
+
+const usersResponse = await fetch(users_url);
 const users = await usersResponse.json();
 const userProfile = users.find(user => user.email === loggedInUserEmail);
 
