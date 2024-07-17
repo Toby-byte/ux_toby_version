@@ -7,7 +7,8 @@ for (let index = 0; index < 8; index++) {
     makeRandomElement('.cards')
 }
 
-
+// addToClass was made so the function could be used on more than one section
+// you can type a class and random element will be created there  
 function makeRandomElement(addToClass) {
     fetch(url)
     .then((response) => {
@@ -22,14 +23,14 @@ function makeRandomElement(addToClass) {
             const randomMealTitle = data.meals[0].strMeal;
             const randomMealImage = data.meals[0].strMealThumb;
 
-            // Create the elements
+            // card elements are created
             const article = document.createElement('article');
             const div = document.createElement('div');
             const h2 = document.createElement('h2');
             const p = document.createElement('p');
             const a = document.createElement('a');
 
-            // Set the classes and attributes
+            // Set the classes and attributes for the card element
             article.classList.add('card1');
             div.classList.add('card-content');
             h2.classList.add('card-title');
@@ -38,22 +39,21 @@ function makeRandomElement(addToClass) {
             a.setAttribute('href', `meal-detail.html?id=${randomMealID}`);
             a.setAttribute('title', 'see more');
 
-            // Set the inner text
+            // Set the text for the element
             h2.innerText = randomMealTitle;
             p.innerText = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque';
             a.innerText = 'More';
 
-            // Set the background image dynamically
+            // Set the background image dynamically with style (i don't know, how to do it better)
             article.style.backgroundImage = `url(${randomMealImage})`;
 
-            // Append the elements to form the desired structure
+            // Append the elements to form the card element
             div.appendChild(h2);
             div.appendChild(p);
             div.appendChild(a);
             article.appendChild(div);
 
-            // Find the target section and append the article
-            // const section = document.querySelector('.cards');
+            // append the article to the desired target class/id
             const section = document.querySelector(`${addToClass}`);
             section.appendChild(article);
 

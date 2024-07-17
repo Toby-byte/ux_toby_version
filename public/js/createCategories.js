@@ -15,7 +15,7 @@ function makeCategories(url) {
                 select.id = 'categorySelect';
                 select.setAttribute('aria-label', 'Category Select');
 
-                // Populate the <select> element with <option> elements
+                // Fill the <select> element with <option> elements from the api via a for each loop
                 data.categories.forEach(category => {
                     const option = document.createElement('option');
                     option.value = category.strCategory;
