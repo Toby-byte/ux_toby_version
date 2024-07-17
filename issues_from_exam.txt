@@ -1,6 +1,6 @@
 1. The recipes are not random, as requested, but hardcoded (Done)
 
-2. The categories are hardcoded instead of read from the API (recipe_site.html, lines 43-58)
+2. The categories are hardcoded instead of read from the API (recipe_site.html, lines 43-58) (Done)
 
 3. Lack of wayfinding mechanisms (CTAs, breadcrumbs)
 
@@ -25,4 +25,4 @@
 
 13. JavaScript: Some URLs are hardcoded instead of declared as variables with const (Done)
 
-                                ------------------  9,5 of 13 done  ------------------
+                                ------------------  10,5 of 13 done  ------------------

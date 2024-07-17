@@ -21,9 +21,6 @@ function makeRandomElement(addToClass) {
             const randomMealID = data.meals[0].idMeal;
             const randomMealTitle = data.meals[0].strMeal;
             const randomMealImage = data.meals[0].strMealThumb;
-            console.log(randomMealID);
-            console.log(randomMealTitle);
-            console.log(randomMealImage);
 
             // Create the elements
             const article = document.createElement('article');
