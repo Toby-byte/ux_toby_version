@@ -1,4 +1,4 @@
-1. The recipes are not random, as requested, but hardcoded
+1. The recipes are not random, as requested, but hardcoded (Done)
 
 2. The categories are hardcoded instead of read from the API (recipe_site.html, lines 43-58)
 
@@ -19,10 +19,10 @@
 
 10. CSS: hardcoded colours (cards.css, lines 82, 83 and 84) and hardcoded fonts (search_styles.css, line 24) instead of custom properties (Done)
 
-11. The homepage images are too big and with no alternate sizes
+11. The homepage images are too big and with no alternate sizes (half done, need to figure out how to make alternate images)
 
 12. Unnecessary use of DOMContentLoaded, as the JavaScript files are loaded with defer (Done)
 
 13. JavaScript: Some URLs are hardcoded instead of declared as variables with const (Done)
 
-                                ------------------  8 of 13 done  ------------------
+                                ------------------  9,5 of 13 done  ------------------
