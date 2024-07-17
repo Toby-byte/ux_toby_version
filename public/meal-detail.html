@@ -24,7 +24,7 @@
   </header>
   <nav>
     <ul class="sidebar">
-      <li onclick=hideSidebar()><a href="#" title="sidebar-close"><svg xmlns="http://www.w3.org/2000/svg" height="26"
+      <li id="hide_sidebar"><a href="#" title="sidebar-close"><svg xmlns="http://www.w3.org/2000/svg" height="26"
             viewBox="0 96 960 960" width="26">
             <path
               d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
@@ -41,7 +41,7 @@
       <li><a href="contactus.html" title="About Us page" tabindex="4" aria-label="Contact Us">Contact</a></li>
     </ul>
     <ul id="navbar">
-      <li class="menu-button" onclick=showSidebar()><a href="#" title="sidebar-open"><svg
+      <li class="menu-button" id="show_sidebar"><a href="#" title="sidebar-open"><svg
             xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
             <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
           </svg></a></li>
@@ -57,10 +57,6 @@
     </ul>
   </nav>
   <ul>
-    <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26"
-          viewBox="0 96 960 960" width="26">
-          <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
-        </svg></a></li>
     <li id="search-container">
   </ul>
   <main>

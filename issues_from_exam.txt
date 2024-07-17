@@ -7,7 +7,7 @@
 4. Sitemap: no differentiation between main navigation, utility navigation and footer navigation 
 
 5. Inline JavaScript (e.g, index.html, line 33), thus breaking the separation of concerns pattern 
-(in other words, don't use onclick in HTML elements bc. of separation of concerns pattern)
+(in other words, don't use onclick in HTML elements bc. of separation of concerns pattern) (Done)
 
 6. Accessibility: "title" attributes missing in <a> (Done)
 
@@ -25,4 +25,4 @@
 
 13. JavaScript: Some URLs are hardcoded instead of declared as variables with const (Done)
 
-                                ------------------  7 of 13 done  ------------------
+                                ------------------  8 of 13 done  ------------------
