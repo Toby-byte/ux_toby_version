@@ -13,6 +13,7 @@
   <script src="js/script.js" defer></script>
   <script src="js/api.js" defer></script>
   <script src="js/randomMeal.js" defer></script>
+  <script src="js/breadcrumbs.js" defer></script>
 </head>
 
 <body>
@@ -55,6 +56,14 @@
       </li>
     </ul>
   </nav>
+    <!-- Breadcrumbs -->
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="category.html">Category</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Subcategory</li>
+      </ol>
+  </nav>
   <div id="meals">
     <div id="mealDisplay"></div>
   </div>
@@ -72,7 +81,7 @@
       </section>
 
       <section class="recipes-of-the-week">
-        <h3 class="rtw-header">Recipe of The Week</h3>
+        <h3 class="rtw-header">Checkout the recipe of The Week!</h3>
         <div class="rtw-text-container">
           <p class="rtw-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora omnis soluta aut commodi
             est vel, dignissimos illum dicta ipsum.</p>

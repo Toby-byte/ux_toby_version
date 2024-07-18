@@ -2,9 +2,11 @@
 
 2. The categories are hardcoded instead of read from the API (recipe_site.html, lines 43-58) (Done)
 
-3. Lack of wayfinding mechanisms (CTAs, breadcrumbs)
+3. Lack of wayfinding mechanisms (CTAs, breadcrumbs) (NO FUCKING IDEA HOW TO DO IT!) (half done)
+- not possible with only json server since it can only serve endpoints as routes
 
-4. Sitemap: no differentiation between main navigation, utility navigation and footer navigation 
+4. Sitemap: no differentiation between main navigation, utility navigation and footer navigation (Done)
+link to Sitemap: https://docs.google.com/document/d/1WPv32keYiOPsWgLrjX2zyIb4fWV6IIkikrDpsaAammc/edit?usp=sharing
 
 5. Inline JavaScript (e.g, index.html, line 33), thus breaking the separation of concerns pattern 
 (in other words, don't use onclick in HTML elements bc. of separation of concerns pattern) (Done)
@@ -25,4 +27,4 @@
 
 13. JavaScript: Some URLs are hardcoded instead of declared as variables with const (Done)
 
-                                ------------------  10,5 of 13 done  ------------------
+                                ------------------  12 of 13 done  ------------------

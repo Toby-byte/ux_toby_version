@@ -280,6 +280,41 @@ footer {
   display: none;
 }
 
+/* breadcrumbs */
+
+.breadcrumb {
+  display: flex;
+  align-items: baseline;
+  list-style: none;
+  padding: 10px 0;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+}
+
+.breadcrumb-item {
+  margin-right: 5px;
+}
+
+.breadcrumb-item + .breadcrumb-item:before {
+  content: ">";
+  margin-right: 5px;
+}
+
+.breadcrumb-item a {
+  text-decoration: none;
+  color: #0275d8;
+}
+
+.breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+  color: #555;
+}
+
+/* breadcrumbs */
+
 /* end of footer */
 
 /* start of @mediea */
