@@ -22,6 +22,7 @@ if (mealId) {
         img_name_div.appendChild(img);
 
         const mealName = document.createElement("h1");
+        mealName.id = "mealName";
         mealName.textContent = strMeal;
         img_name_div.appendChild(mealName);
 

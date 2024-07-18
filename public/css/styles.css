@@ -293,6 +293,8 @@ footer {
 
 .breadcrumb-item {
   margin-right: 5px;
+  display: flex;
+  align-items: center;
 }
 
 .breadcrumb-item + .breadcrumb-item:before {
