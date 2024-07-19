@@ -8,8 +8,8 @@ function showSidebar() {
 show_sidebar = document.getElementById("show_sidebar");
 
 show_sidebar.addEventListener("click", () => {
-  showSidebar()
-})
+  showSidebar();
+});
 
 // close the sidebar in mobile view
 
@@ -21,8 +21,8 @@ function hideSidebar() {
 hide_sidebar = document.getElementById("hide_sidebar");
 
 hide_sidebar.addEventListener("click", () => {
-  hideSidebar()
-})
+  hideSidebar();
+});
 
 const navbar = document.querySelector("#navbar");
 const sidebar = document.querySelector(".sidebar");

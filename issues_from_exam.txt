@@ -2,7 +2,7 @@
 
 2. The categories are hardcoded instead of read from the API (recipe_site.html, lines 43-58) (Done)
 
-3. Lack of wayfinding mechanisms (CTAs, breadcrumbs) (NO FUCKING IDEA HOW TO DO IT!) (half done)
+3. Lack of wayfinding mechanisms (CTAs, breadcrumbs) (Done)
 - not possible with only json server since it can only serve endpoints as routes
 
 4. Sitemap: no differentiation between main navigation, utility navigation and footer navigation (Done)
@@ -21,10 +21,13 @@ link to Sitemap: https://docs.google.com/document/d/1WPv32keYiOPsWgLrjX2zyIb4fWV
 
 10. CSS: hardcoded colours (cards.css, lines 82, 83 and 84) and hardcoded fonts (search_styles.css, line 24) instead of custom properties (Done)
 
-11. The homepage images are too big and with no alternate sizes (half done, need to figure out how to make alternate images)
+11. The homepage images are too big and with no alternate sizes (Done)
+- this can be tested with devtools see https://developer.chrome.com/docs/devtools/device-mode under Set device pixel ratio 
 
 12. Unnecessary use of DOMContentLoaded, as the JavaScript files are loaded with defer (Done)
 
 13. JavaScript: Some URLs are hardcoded instead of declared as variables with const (Done)
 
-                                ------------------  12 of 13 done  ------------------
+                                ------------------  13 of 13 done  ------------------
+
+Bonus: all JavaScript needs a refactor, to see if code can be improved
