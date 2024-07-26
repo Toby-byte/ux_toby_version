@@ -3,16 +3,14 @@ const loginForm = document.querySelector("#login-form");
 const users_url = "http://localhost:3000/users";
 
 if (signupForm) {
-  // signup form
   const passwordError = document.querySelector("#password-error");
+  
+  signupForm.addEventListener("submit", handleSignup);
 
-  signupForm.addEventListener("submit", async (e) => {
+  async function handleSignup(e) {
     e.preventDefault();
 
-    const formData = new FormData(signupForm);
-    const email = formData.get("email");
-    const password = formData.get("password");
-    const confirmPassword = formData.get("confirm-password");
+    const { email, password, confirmPassword } = getFormData(signupForm);
 
     if (!isValidEmail(email)) {
       alert("Please enter a valid email address.");
@@ -25,97 +23,104 @@ if (signupForm) {
     }
 
     if (!isValidPassword(password)) {
-      passwordError.textContent =
+      passwordError.textContent = 
         "Password must be between 8 and 20 characters, and contain lowercase and uppercase letters, numbers, and special characters.";
       return;
     }
 
     passwordError.textContent = "";
 
-    const response = await fetch(users_url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
+    try {
+      const response = await fetch(users_url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-    if (response.ok) {
-      alert("Signup successful!");
-    } else {
-      alert("Signup failed!");
+      if (response.ok) {
+        alert("Signup successful!");
+      } else {
+        throw new Error("Signup failed!");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Signup failed due to a network error!");
     }
-  });
-
-  function isValidEmail(email) {
-    // email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  }
-
-  function isValidPassword(password) {
-    // password validation
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
-    return passwordRegex.test(password);
   }
 }
 
 if (loginForm) {
-  loginForm.addEventListener("submit", async (e) => {
+  loginForm.addEventListener("submit", handleLogin);
+
+  async function handleLogin(e) {
     e.preventDefault();
 
-    const formData = new FormData(loginForm);
-    const email = formData.get("email");
-    const password = formData.get("password");
+    const { email, password } = getFormData(loginForm);
 
-    const response = await fetch(users_url);
-    const users = await response.json();
+    try {
+      const response = await fetch(users_url);
+      if (!response.ok) throw new Error("Network response was not ok");
 
-    const user = users.find(
-      (user) => user.email === email && user.password === password
-    );
+      const users = await response.json();
+      const user = users.find(
+        (user) => user.email === email && user.password === password
+      );
 
-    if (user) {
-      alert("Login successful!");
-
-      // Store logged-in user's email in sessionStorage
-      sessionStorage.setItem("loggedInUser", email);
-
-      // Redirect
-      window.location.href = "index.html";
-    } else {
-      alert("Invalid email or password!");
+      if (user) {
+        alert("Login successful!");
+        sessionStorage.setItem("loggedInUser", email);
+        window.location.href = "index.html";
+      } else {
+        alert("Invalid email or password!");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Login failed due to a network error!");
     }
-  });
+  }
 }
 
-// Checks if user is logged in
+const logoutButton = document.querySelector("#logout-button");
+if (logoutButton) {
+  logoutButton.addEventListener("click", handleLogout);
+}
+
+protectPage();
+
+
+function getFormData(form) {
+  const formData = new FormData(form);
+  const email = formData.get("email");
+  const password = formData.get("password");
+  const confirmPassword = formData.get("confirm-password");
+  return { email, password, confirmPassword };
+}
+
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+function isValidPassword(password) {
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
+  return passwordRegex.test(password);
+}
+
 function checkLoggedIn() {
-  const loggedInUser = sessionStorage.getItem("loggedInUser");
-  return loggedInUser !== null;
+  return sessionStorage.getItem("loggedInUser") !== null;
 }
 
-// Protect restricted pages
 function protectPage() {
   const currentPage = window.location.pathname.split("/").pop();
 
-  // Redirect to index.html if the user is not logged in and tries to access logout.html
   if (currentPage === "logout.html" && !checkLoggedIn()) {
     window.location.href = "index.html";
   }
 }
 
-protectPage();
-
-//  Logout function
-const logoutButton = document.querySelector("#logout-button");
-if (logoutButton) {
-  logoutButton.addEventListener("click", () => {
-    // Remove user from sessionStorage
-    sessionStorage.removeItem("loggedInUser");
-
-    // Redirect to home page
-    window.location.href = "index.html";
-  });
+function handleLogout() {
+  sessionStorage.removeItem("loggedInUser");
+  window.location.href = "index.html";
 }
