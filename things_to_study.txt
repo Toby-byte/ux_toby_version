@@ -1,0 +1,9 @@
+Javascript
+
+Arrow functions:
+    Arrow functions are a shorthand way to write functions in JavaScript.
+    
+    mealArray => displayMeals(mealArray) is an arrow function. 
+
+    Examples
+    1. (see example from chatGPT: https://chatgpt.com/share/c212f245-8174-4219-91d5-ad78219ddaf2)
