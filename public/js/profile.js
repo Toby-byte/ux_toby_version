@@ -2,11 +2,12 @@ const profileInfo = document.getElementById("profile-info");
 const favoriteRecipesList = document.getElementById("favorite-recipes");
 const users_url = "http://localhost:3000/users";
 
-// Main logic wrapped in an IIFE to allow usage of return
+// initializePage() is here so i can use return in first if statement 
 (async function initializePage() {
   // Check necessary elements
   if (!profileInfo || !favoriteRecipesList) {
     console.error("Element with id 'profile-info' or 'favorite-recipes' not found.");
+    // this one VVV
     return;
   }
 
