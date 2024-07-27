@@ -6,7 +6,7 @@ makeRandomElements(".recipes-of-the-week", 1);
 makeRandomElements(".cards", 8);
 
 // TargetClass parameter was made so the function could be used on more than one section
-// you can type a class and random element will be created there
+// type a class and random element will be created there
 function makeRandomElements(targetClass, amount) {
   for (let i = 0; i < amount; i++) {
     fetchRandomMeal()

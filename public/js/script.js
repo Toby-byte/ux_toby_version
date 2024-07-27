@@ -54,6 +54,7 @@ function addNavbarItem(container, text, href, clickHandler) {
   listItem.appendChild(link);
   container.appendChild(listItem);
 }
+
 // function that logges user out
 function handleLogout(event) {
   event.preventDefault(); // Prevent the default link behavior, by not navigating to logout.html
