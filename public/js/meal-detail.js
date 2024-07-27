@@ -4,6 +4,10 @@ const mealId = params.get("id"); // Get the meal ID
 if (mealId) {
   const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
 
+  fetchMealDetails(url);
+}
+
+function fetchMealDetails(url) {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
@@ -11,94 +15,113 @@ if (mealId) {
 
       if (data.meals) {
         const meal = data.meals[0];
-        const { strMealThumb, strMeal, strCategory, strInstructions, idMeal } =
-          meal;
-
-        const img_name_div = document.createElement("div");
-
-        const img = document.createElement("img");
-        img.src = strMealThumb;
-        img.setAttribute("aria-label", strMeal);
-        img_name_div.appendChild(img);
-
-        const mealName = document.createElement("h1");
-        mealName.id = "mealName";
-        mealName.textContent = strMeal;
-        img_name_div.appendChild(mealName);
-
-        const category = document.createElement("p");
-        category.textContent = `Category: ${strCategory}`;
-        img_name_div.appendChild(category);
-
-        mealDetail.appendChild(img_name_div);
-
-        // Creates the Instructions section
-        const instructionsDiv = document.createElement("div");
-
-        const instructionsHeading = document.createElement("h1");
-        instructionsHeading.textContent = "Instructions";
-        instructionsDiv.appendChild(instructionsHeading);
-
-        const formattedInstructions = formatInstructions(strInstructions);
-        const ol = document.createElement("ol");
-        formattedInstructions.forEach((step) => {
-          const li = document.createElement("li");
-          li.textContent = step;
-          ol.appendChild(li);
-        });
-
-        instructionsDiv.appendChild(ol);
-
-        // Creates the Ingredients section
-        const ingredientsDiv = document.createElement("div");
-
-        const ingredientsHeading = document.createElement("h1");
-        ingredientsHeading.textContent = "Ingredients";
-        ingredientsDiv.appendChild(ingredientsHeading);
-
-        const ingredientsList = document.createElement("ol");
-
-        for (let i = 1; i <= 20; i++) {
-          const ingredient = meal[`strIngredient${i}`];
-          const measure = meal[`strMeasure${i}`];
-          if (ingredient && measure) {
-            const li = document.createElement("li");
-            li.textContent = `${ingredient}: ${measure}`;
-            ingredientsList.appendChild(li);
-          }
-        }
-
-        ingredientsDiv.appendChild(ingredientsList);
-        const ingredients_instructions_div = document.createElement("div");
-        ingredients_instructions_div.appendChild(ingredientsDiv);
-        ingredients_instructions_div.appendChild(instructionsDiv);
-        mealDetail.appendChild(ingredients_instructions_div);
-
-        // Add favorite button
-        const favoriteButton = document.createElement("button");
-        favoriteButton.className = "FavoriteButton";
-        const loggedInUserEmail = sessionStorage.getItem("loggedInUser");
-        const favoriteRecipesKey = `user_${loggedInUserEmail}_favorites`;
-        let favoriteRecipes =
-          JSON.parse(localStorage.getItem(favoriteRecipesKey)) || [];
-
-        const isFavorite = favoriteRecipes.some(
-          (r) => r.idMeal === meal.idMeal
-        );
-        favoriteButton.textContent = isFavorite ? "☆ Unfavorite" : "★ Favorite";
-        mealDetail.appendChild(favoriteButton);
-
-        favoriteButton.addEventListener("click", () => {
-          toggleFavorite(meal, favoriteButton);
-        });
+        displayMealDetails(meal, mealDetail);
       } else {
         mealDetail.textContent = "Meal details not found.";
       }
     })
     .catch((error) => {
       console.error("Error fetching meal details: ", error);
-      mealDetail.textContent = "Failed to fetch meal details.";
+      document.getElementById("mealDetail").textContent = "Failed to fetch meal details.";
     });
+}
+
+function displayMealDetails(meal, mealDetail) {
+  const { strMealThumb, strMeal, strCategory, strInstructions } = meal;
+
+  const img_name_div = createImageNameDiv(strMealThumb, strMeal, strCategory);
+  mealDetail.appendChild(img_name_div);
+
+  const instructionsDiv = createInstructionsDiv(strInstructions);
+  const ingredientsDiv = createIngredientsDiv(meal);
+
+  const ingredients_instructions_div = document.createElement("div");
+  ingredients_instructions_div.appendChild(ingredientsDiv);
+  ingredients_instructions_div.appendChild(instructionsDiv);
+  mealDetail.appendChild(ingredients_instructions_div);
+
+  const favoriteButton = createFavoriteButton(meal);
+  mealDetail.appendChild(favoriteButton);
+}
+
+function createImageNameDiv(imageSrc, mealName, category) {
+  const img_name_div = document.createElement("div");
+
+  const img = document.createElement("img");
+  img.src = imageSrc;
+  img.setAttribute("aria-label", mealName);
+  img_name_div.appendChild(img);
+
+  const name = document.createElement("h1");
+  name.id = "mealName";
+  name.textContent = mealName;
+  img_name_div.appendChild(name);
+
+  const categoryElement = document.createElement("p");
+  categoryElement.textContent = `Category: ${category}`;
+  img_name_div.appendChild(categoryElement);
+
+  return img_name_div;
+}
+
+function createInstructionsDiv(instructions) {
+  const instructionsDiv = document.createElement("div");
+
+  const instructionsHeading = document.createElement("h1");
+  instructionsHeading.textContent = "Instructions";
+  instructionsDiv.appendChild(instructionsHeading);
+
+  const formattedInstructions = formatInstructions(instructions);
+  const ol = document.createElement("ol");
+  formattedInstructions.forEach((step) => {
+    const li = document.createElement("li");
+    li.textContent = step;
+    ol.appendChild(li);
+  });
+
+  instructionsDiv.appendChild(ol);
+  return instructionsDiv;
+}
+
+function createIngredientsDiv(meal) {
+  const ingredientsDiv = document.createElement("div");
+
+  const ingredientsHeading = document.createElement("h1");
+  ingredientsHeading.textContent = "Ingredients";
+  ingredientsDiv.appendChild(ingredientsHeading);
+
+  const ingredientsList = document.createElement("ol");
+
+  for (let i = 1; i <= 20; i++) {
+    const ingredient = meal[`strIngredient${i}`];
+    const measure = meal[`strMeasure${i}`];
+    if (ingredient && measure) {
+      const li = document.createElement("li");
+      li.textContent = `${ingredient}: ${measure}`;
+      ingredientsList.appendChild(li);
+    }
+  }
+
+  ingredientsDiv.appendChild(ingredientsList);
+  return ingredientsDiv;
+}
+
+function createFavoriteButton(meal) {
+  const favoriteButton = document.createElement("button");
+  favoriteButton.className = "FavoriteButton";
+
+  const loggedInUserEmail = sessionStorage.getItem("loggedInUser");
+  const favoriteRecipesKey = `user_${loggedInUserEmail}_favorites`;
+  let favoriteRecipes = JSON.parse(localStorage.getItem(favoriteRecipesKey)) || [];
+
+  const isFavorite = favoriteRecipes.some((r) => r.idMeal === meal.idMeal);
+  favoriteButton.textContent = isFavorite ? "☆ Unfavorite" : "★ Favorite";
+
+  favoriteButton.addEventListener("click", () => {
+    toggleFavorite(meal, favoriteButton);
+  });
+
+  return favoriteButton;
 }
 
 function formatInstructions(instructions) {
@@ -127,8 +150,7 @@ function toggleFavorite(meal, button) {
   }
 
   const favoriteRecipesKey = `user_${loggedInUserEmail}_favorites`;
-  let favoriteRecipes =
-    JSON.parse(localStorage.getItem(favoriteRecipesKey)) || [];
+  let favoriteRecipes = JSON.parse(localStorage.getItem(favoriteRecipesKey)) || [];
 
   const isFavorite = favoriteRecipes.some((r) => r.idMeal === meal.idMeal);
 
