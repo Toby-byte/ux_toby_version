@@ -37,7 +37,6 @@ function fetchRandomMeal() {
       if (data.meals && data.meals.length > 0) {
         return data.meals[0];
       }
-      console.log("random meal was not found")
     });
 }
 
