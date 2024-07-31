@@ -7,3 +7,11 @@ Arrow functions:
 
     Examples
     1. (see example from chatGPT: https://chatgpt.com/share/c212f245-8174-4219-91d5-ad78219ddaf2)
+
+CSS
+
+viewport units: 
+
+    The vw unit represents 1% of the root element width. One vw is equal to 1% of the viewport width.
+
+    read more about it here: https://ishadeed.com/article/viewport-units/
