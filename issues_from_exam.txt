@@ -31,4 +31,4 @@ link to Sitemap: https://docs.google.com/document/d/1WPv32keYiOPsWgLrjX2zyIb4fWV
 
                                 ------------------  13 of 13 done  ------------------
 
-Bonus: all JavaScript needs a refactor, to see if code can be improved
+Bonus: all JavaScript needs a refactor, to see if code can be improved (Done)
