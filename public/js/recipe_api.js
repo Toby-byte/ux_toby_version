@@ -62,7 +62,7 @@ function createListItem(index, meal, gridColumns) {
   const button = document.createElement("button");
   button.textContent = "Click here to see details";
   button.addEventListener("click", function () {
-    window.location.href = `meal-detail.html?id=${idMeal}&favorites=${encodeURIComponent(JSON.stringify(getFavoriteRecipes()))}&name=${encodeURIComponent(JSON.stringify(strMeal))}`;
+    window.location.href = `meal-detail.html?id=${idMeal}&favorites=${encodeURIComponent(JSON.stringify(getFavoriteRecipes()))}&name=${strMeal}`;
   });
   li.appendChild(button);
 

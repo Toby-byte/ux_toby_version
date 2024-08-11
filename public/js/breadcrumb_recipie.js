@@ -3,7 +3,7 @@ const recipieNameElement = new URLSearchParams(window.location.search);
 const element = document.getElementById("current_recipe");
 
 if (recipieNameElement && element) { 
-  const recipieName = params.get('name').replace(/"/g,'');
+  const recipieName = params.get('name');
   element.href = currentUrl;
   element.textContent = recipieName;
   element.title = recipieName;

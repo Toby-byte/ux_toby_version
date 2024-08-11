@@ -63,7 +63,7 @@ function createMealCard(meal) {
 
   const a = document.createElement("a");
   a.classList.add("card-btn");
-  a.setAttribute("href", `meal-detail.html?id=${idMeal}&name=${encodeURIComponent(JSON.stringify(strMeal))}`);
+  a.setAttribute("href", `meal-detail.html?id=${idMeal}&name=${strMeal}`);
   a.setAttribute("title", "see more");
   a.innerText = "More";
 
